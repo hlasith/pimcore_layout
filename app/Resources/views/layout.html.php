@@ -124,7 +124,7 @@ use Pimcore\Model\Document\Page;
 </div>
 
 <?php if (!$isPortal): ?>
-<!--    --><?//= $this->template('Includes/jumbotron.html.php') ?>
+    <?= $this->template('Includes/jumbotron.html.php') ?>
 
     <div id="content" class="container">
         <?php
