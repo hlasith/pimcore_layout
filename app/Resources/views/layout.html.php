@@ -122,9 +122,13 @@ use Pimcore\Model\Document\Page;
                         <?php // here need to manually check for ACL conditions ?>
                         <?php if (!$page->isVisible() || !$menuRenderer->accept($page)) { continue; } ?>
                         <?php $hasChildren = $page->hasPages(); ?>
+                        <?php $isActive = $page->isActive(); ?>
                         <?php if (!$hasChildren) { ?>
                             <li class="nav-item">
-                                <a  class="nav-link ngl-link-fourth" href="<?= $page->getHref() ?>">
+                                <a  class="nav-link ngl-link-fourth <?php echo $isActive ? 'active' : ''; ?> "
+                                    href="<?=
+                                    $page->getHref
+                                () ?>">
                                     <?= $this->translate($page->getLabel()) ?>
                                 </a>
                             </li>
