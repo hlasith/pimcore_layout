@@ -86,6 +86,7 @@ use Pimcore\Model\Document\Page;
     <script src="/static/js/html5shiv.js"></script>
     <script src="/static/js/respond.min.js"></script>
     <![endif]-->
+    <script>window.Tether = {};</script>
 </head>
 
 <body class="<?= $isPortal ? "ngl-pro-home" : '' ?>">
@@ -245,83 +246,88 @@ use Pimcore\Model\Document\Page;
 echo $this->inc('/' . $this->getLocale() . '/shared/includes/footer');
 
 // global scripts, we use the view helper here to have the cache buster functionality
-$this->headScript()->prependFile('/static/bootstrap/js/bootstrap.js');
-$this->headScript()->prependFile('/static/js/jquery-1.11.0.min.js');
-$this->headScript()->appendFile('/static/lib/magnific/magnific.js');
-$this->headScript()->appendFile('/static/lib/video-js/video.js');
-$this->headScript()->appendFile('/static/js/srcset-polyfill.min.js');
+//$this->headScript()->prependFile('/static/bootstrap/js/bootstrap.js');
+//$this->headScript()->prependFile('/static/js/jquery-1.11.0.min.js');
+//$this->headScript()->appendFile('/static/lib/magnific/magnific.js');
+//$this->headScript()->appendFile('/static/lib/video-js/video.js');
+//$this->headScript()->appendFile('/static/js/srcset-polyfill.min.js');
+
+$this->headScript()->appendFile('/vendor/requirejs/require.js');
+$this->headScript()->appendFile('/static/js/main.js');
+
+
 
 echo $this->headScript();
 ?>
 
-<script>
-    videojs.options.flash.swf = "/static/lib/video-js/video-js.swf";
-</script>
+<!--<script>-->
+<!--    videojs.options.flash.swf = "/static/lib/video-js/video-js.swf";-->
+<!--</script>-->
 
 <script>
-    // main menu
-    $(".navbar-wrapper ul.nav>li>ul").each(function () {
-        var li = $(this).parent();
-        var a = $("a.main", li);
-
-        $(this).addClass("dropdown-menu");
-        li.addClass("dropdown");
-        a.addClass("dropdown-toggle");
-        li.on("mouseenter", function () {
-            $("ul", $(this)).show();
-        });
-        li.on("mouseleave", function () {
-            $("ul", $(this)).hide();
-        });
-    });
-
-    // side menu
-    $(".bs-sidenav ul").each(function () {
-        $(this).addClass("nav");
-    });
-
-    // gallery carousel: do not auto-start
-    $('.gallery').carousel('pause');
-
-    // tabbed slider text
-    var clickEvent = false;
-    $('.tabbed-slider').on('click', '.nav a', function () {
-        clickEvent = true;
-        $('.nav li').removeClass('active');
-        $(this).parent().addClass('active');
-    }).on('slid.bs.carousel', function (e) {
-        if (!clickEvent) {
-            var count = $('.nav').children().length - 1;
-            var current = $('.nav li.active');
-            current.removeClass('active').next().addClass('active');
-            var id = parseInt(current.data('slide-to'));
-            if (count == id) {
-                $('.nav li').first().addClass('active');
-            }
-        }
-        clickEvent = false;
-    });
-
-    $("#portalHeader img, #portalHeader .item, #portalHeader").height($(window).height());
+//    // main menu
+//    $(".navbar-wrapper ul.nav>li>ul").each(function () {
+//        var li = $(this).parent();
+//        var a = $("a.main", li);
+//
+//        $(this).addClass("dropdown-menu");
+//        li.addClass("dropdown");
+//        a.addClass("dropdown-toggle");
+//        li.on("mouseenter", function () {
+//            $("ul", $(this)).show();
+//        });
+//        li.on("mouseleave", function () {
+//            $("ul", $(this)).hide();
+//        });
+//    });
+//
+//    // side menu
+//    $(".bs-sidenav ul").each(function () {
+//        $(this).addClass("nav");
+//    });
+//
+//    // gallery carousel: do not auto-start
+//    $('.gallery').carousel('pause');
+//
+//    // tabbed slider text
+//    var clickEvent = false;
+//    $('.tabbed-slider').on('click', '.nav a', function () {
+//        clickEvent = true;
+//        $('.nav li').removeClass('active');
+//        $(this).parent().addClass('active');
+//    }).on('slid.bs.carousel', function (e) {
+//        if (!clickEvent) {
+//            var count = $('.nav').children().length - 1;
+//            var current = $('.nav li.active');
+//            current.removeClass('active').next().addClass('active');
+//            var id = parseInt(current.data('slide-to'));
+//            if (count == id) {
+//                $('.nav li').first().addClass('active');
+//            }
+//        }
+//        clickEvent = false;
+//    });
+//
+//    $("#portalHeader img, #portalHeader .item, #portalHeader").height($(window).height());
 
     <?php if(!$this->editmode): ?>
 
     // center the caption on the portal page
-    $("#portalHeader .carousel-caption").css("bottom", Math.round(($(window).height() - $("#portalHeader .carousel-caption").height()) / 3) + "px");
+//    $("#portalHeader .carousel-caption").css("bottom", Math.round(($(window).height() - $("#portalHeader .carousel-caption").height()) / 3) + "px");
 
-    $(document).ready(function () {
-
-        // lightbox (magnific)
-        $('a.thumbnail').magnificPopup({
-            type: 'image',
-            gallery: {
-                enabled: true
-            }
-        });
-
-        $(".image-hotspot").tooltip();
-        $(".image-marker").tooltip();
-    });
+//    $(document).ready(function () {
+//
+//        // lightbox (magnific)
+//        $('a.thumbnail').magnificPopup({
+//            type: 'image',
+//            gallery: {
+//                enabled: true
+//            }
+//        });
+//
+//        $(".image-hotspot").tooltip();
+//        $(".image-marker").tooltip();
+//    });
 
     <?php endif; ?>
 </script>

@@ -1,0 +1,25 @@
+{
+  "name": "NGL",
+  "description": "The NGL project by vitapublic GmbH.",
+  "authors": [
+    "Harshana Lasith <h.lasith@vitapublic.de>"
+  ],
+  "license": "Commercial",
+  "moduleType": [
+    "globals"
+  ],
+  "homepage": "https://github.com/vitapublic/ngl",
+  "private": true,
+  "devDependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "requirejs": "latest",
+    "slick-carousel": "1.7.1",
+    "ngl-ui-kit": "git@github.com:vitapublic/ngl-ui-kit.git"
+  },
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.6",
+    "requirejs": "2.3.5",
+    "slick-carousel": "1.7.1",
+    "ngl-ui-kit": "git@github.com:vitapublic/ngl-ui-kit.git#0247144728295a23a21df72ef44b2254a7527be4"
+  }
+}
