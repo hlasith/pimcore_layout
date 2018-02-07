@@ -107,6 +107,33 @@ use Pimcore\Model\Document\Page;
             <div class="collapse navbar-collapse" id="ngl-nav-responsive">
                 <?php
                 $mainNavigation = $this->navigation()->buildNavigation($document, $mainNavStartNode);
+                $mainNavigation->addPage([
+                    'order' => -1, // put it in front of all the others
+                    'uri' => '/de#theNgl', //path to homepage
+                    'label' => 'Die Ngl', //visible label
+                    'title' => 'Die Ngl' //tooltip text
+                ]);
+
+                $mainNavigation->addPage([
+                    'order' => -1, // put it in front of all the others
+                    'uri' => 'https://www.ngl.one/campus-cup.html', //path to homepage
+                    'label' => 'Campuscup', //visible label
+                    'title' => 'Campuscup' //tooltip text
+                ]);
+
+                $mainNavigation->addPage([
+                    'order' => -1, // put it in front of all the others
+                    'uri' => 'https://www.ngl.one/proclub', //path to homepage
+                    'label' => 'Pro Club', //visible label
+                    'title' => 'Pro Club' //tooltip text
+                ]);
+
+                $mainNavigation->addPage([
+                    'order' => -1, // put it in front of all the others
+                    'uri' => '/de#news', //path to homepage
+                    'label' => 'News', //visible label
+                    'title' => 'News' //tooltip text
+                ]);
 
                 /** @var \Pimcore\Navigation\Renderer\Menu $menuRenderer */
                 $menuRenderer = $this->navigation()->menu();
@@ -116,7 +143,8 @@ use Pimcore\Model\Document\Page;
 //                    'ulClass'  => 'navbar-nav nav mt-sm-2 mt-md-0'
 //                ]);
                 ?>
-                <ul class="navbar-nav nav mt-sm-2 mt-md-0">
+                  <ul class="navbar-nav nav mt-sm-2 mt-md-0">
+
                     <?php foreach ($mainNavigation as $page) { ?>
                         <?php /* @var $page \Pimcore\Navigation\Page\Document */ ?>
                         <?php // here need to manually check for ACL conditions ?>
@@ -132,8 +160,6 @@ use Pimcore\Model\Document\Page;
                                     <?= $this->translate($page->getLabel()) ?>
                                 </a>
                             </li>
-                        <?php } else { ?>
-
                         <?php } ?>
                     <?php } ?>
                 </ul>
@@ -144,6 +170,9 @@ use Pimcore\Model\Document\Page;
     <!-- END NGL PRO Main Navigation -->
 
 </header>
+<?php if ($isPortal): ?>
+    <?= $this->template('Includes/ngl-pro-carousel.html.php') ?>   
+<?php endif; ?>
 
 
 
