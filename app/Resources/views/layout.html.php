@@ -55,12 +55,22 @@ use Pimcore\Model\Document\Page;
     ?>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href="https://cdn.ngl.one/fonts/ngl-iconfont.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="https://cdn.ngl.one/fonts/Titillium_Web.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="https://cdn.ngl.one/fonts/Roboto.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="https://cdn.ngl.one/fonts/font-awesome.css" media="screen" rel="stylesheet" type="text/css">
     <!-- Le styles -->
     <?php
     // we use the view helper here to have the cache buster functionality
-    $this->headLink()->appendStylesheet('/static/bootstrap/css/bootstrap.css');
-    $this->headLink()->appendStylesheet('/static/css/global.css');
+//    $this->headLink()->appendStylesheet('/static/bootstrap/css/bootstrap.css');
+//    $this->headLink()->appendStylesheet('/static/css/global.css');
+    $this->headLink()->appendStylesheet('/static/css/ngl_pro_main.css');
+    ?>
+
+
+
+    <?php
+
     $this->headLink()->appendStylesheet('/static/lib/video-js/video-js.min.css', "screen");
     $this->headLink()->appendStylesheet('/static/lib/magnific/magnific.css', "screen");
     $this->headLink()->appendStylesheet('/static/css/print.css', "print");
@@ -78,50 +88,60 @@ use Pimcore\Model\Document\Page;
     <![endif]-->
 </head>
 
-<body class="<?= $isPortal ? "portal-page" : '' ?>">
+<body class="<?= $isPortal ? "ngl-pro-home" : '' ?>">
 
-<div class="navbar-wrapper">
-
+<header>
     <?php
     $mainNavStartNode = $document->getProperty('mainNavStartNode');
     if (!$mainNavStartNode) {
         $mainNavStartNode = Document::getById(1);
     }
     ?>
+    <!-- NGL PRO Main Navigation -->
+    <nav class="navbar navbar-expand-md px-0 ngl-main-nav">
+        <div class="container px-3 d-md-flex">
+            <a class="navbar-brand mr-0" href="<?= $mainNavStartNode; ?>"><i class="ngl-icon fa-system-ngl"></i></a>
+            <button class="navbar-toggler ngl-nav-toggler collapsed" type="button" data-toggle="collapse" data-target="#ngl-nav-responsive" aria-controls="ngl-nav-responsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="ngl-nav-responsive">
+                <?php
+                $mainNavigation = $this->navigation()->buildNavigation($document, $mainNavStartNode);
 
-    <div class="container">
-        <div class="navbar navbar-inverse navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="<?= $mainNavStartNode; ?>">
-                        <img src="/static/img/logo-white.svg" alt="pimcore Demo">
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <?php
-                    $mainNavigation = $this->navigation()->buildNavigation($document, $mainNavStartNode);
+                /** @var \Pimcore\Navigation\Renderer\Menu $menuRenderer */
+                $menuRenderer = $this->navigation()->menu();
 
-                    echo $this->navigation()->render($mainNavigation, 'menu', 'renderMenu', [
-                        'maxDepth' => 1,
-                        'ulClass'  => 'nav navbar-nav'
-                    ]);
-                    ?>
+//                echo $this->navigation()->render($mainNavigation, 'menu', 'renderMenu', [
+//                    'maxDepth' => 0,
+//                    'ulClass'  => 'navbar-nav nav mt-sm-2 mt-md-0'
+//                ]);
+                ?>
+                <ul class="navbar-nav nav mt-sm-2 mt-md-0">
+                    <?php foreach ($mainNavigation as $page) { ?>
+                        <?php /* @var $page \Pimcore\Navigation\Page\Document */ ?>
+                        <?php // here need to manually check for ACL conditions ?>
+                        <?php if (!$page->isVisible() || !$menuRenderer->accept($page)) { continue; } ?>
+                        <?php $hasChildren = $page->hasPages(); ?>
+                        <?php if (!$hasChildren) { ?>
+                            <li class="nav-item">
+                                <a  class="nav-link ngl-link-fourth" href="<?= $page->getHref() ?>">
+                                    <?= $this->translate($page->getLabel()) ?>
+                                </a>
+                            </li>
+                        <?php } else { ?>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <?= $this->template('Includes/login.html.php'); ?>
-                        <?= $this->template('Includes/language.html.php'); ?>
-                    </ul>
-
-                </div>
+                        <?php } ?>
+                    <?php } ?>
+                </ul>
+                <a class="navbar-brand mr-0 font-weight-bold ngl-link-primary" href="#"><span>Anmelden</span></a>
             </div>
         </div>
-    </div>
-</div>
+    </nav>
+    <!-- END NGL PRO Main Navigation -->
+
+</header>
+
+
 
 <?php if (!$isPortal): ?>
     <?= $this->template('Includes/jumbotron.html.php') ?>
