@@ -6,16 +6,19 @@
  */
 ?>
 
-<?php if($this->editmode) { // styles only for editmode ?>
-    <link rel="stylesheet" href="/static/css/global.css">
-<?php } ?>
-
 <!-- FOOTER -->
 <footer>
-    <p class="pull-right"><a href="#"><?= $this->translate("Back to top"); ?></a></p>
-    <p class="links">&copy; <?= date("Y"); ?> pimcore GmbH &middot;
-        <?php while($this->block("links")->loop()) { ?>
-            <?= $this->link("link"); ?>
-        <?php } ?>
-    </p>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <ul class="d-flex justify-content-between align-items-center">
+                    <li><a class="text-uppercase font-weight-bold ngl-font-black" href="datenschutz.html" target="_blank">Datenschutz</a></li>
+                    <li><a class="text-uppercase font-weight-bold ngl-font-black" href="agb.html" target="_blank">AGB</a></li>
+                    <li><a class="text-uppercase font-weight-bold ngl-font-black" href="impressum.html" target="_blank">Impressum</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </footer>
+

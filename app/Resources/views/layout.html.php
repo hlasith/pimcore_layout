@@ -90,7 +90,7 @@ use Pimcore\Model\Document\Page;
 
 <body class="<?= $isPortal ? "ngl-pro-home" : '' ?>">
 
-<header>
+<header class="fixed-top">
     <?php
     $mainNavStartNode = $document->getProperty('mainNavStartNode');
     if (!$mainNavStartNode) {
@@ -171,13 +171,15 @@ use Pimcore\Model\Document\Page;
 
 </header>
 <?php if ($isPortal): ?>
-    <?= $this->template('Includes/ngl-pro-carousel.html.php') ?>   
+    <?= $this->template('Includes/ngl-pro-carousel.html.php') ?>
+    <?= $this->template('Includes/the-ngl.html.php') ?>
+    <?= $this->template('Includes/the-ngl-branding.html.php') ?>
+    <?= $this->template('Includes/the-ngl-news.html.php') ?>
 <?php endif; ?>
 
 
 
 <?php if (!$isPortal): ?>
-    <?= $this->template('Includes/jumbotron.html.php') ?>
 
     <div id="content" class="container">
         <?php
@@ -232,6 +234,10 @@ use Pimcore\Model\Document\Page;
     </div>
 <?php else: ?>
     <?php $this->slots()->output('_content') ?>
+<?php endif; ?>
+<?php if ($isPortal): ?>
+    <?= $this->template('Includes/the-ngl-partner.html.php') ?>
+
 <?php endif; ?>
 
 <?php
