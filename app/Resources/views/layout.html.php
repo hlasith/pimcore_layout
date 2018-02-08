@@ -93,6 +93,13 @@ use Pimcore\Model\Document\Page;
 
 <header class="fixed-top">
     <?php
+//    if(\Pimcore\Model\Site::isSiteRequest()) {
+//        $site = \Pimcore\Model\Site::getCurrentSite();
+//        $mainNavStartNode = $site->getRootDocument();
+//    } else {
+//        $mainNavStartNode = \Pimcore\Model\Document::getById(1);
+//    }
+
     $mainNavStartNode = $document->getProperty('mainNavStartNode');
     if (!$mainNavStartNode) {
         $mainNavStartNode = Document::getById(1);
@@ -110,7 +117,7 @@ use Pimcore\Model\Document\Page;
                 $mainNavigation = $this->navigation()->buildNavigation($document, $mainNavStartNode);
                 $mainNavigation->addPage([
                     'order' => -1, // put it in front of all the others
-                    'uri' => '/de#theNgl', //path to homepage
+                    'uri' => '/#theNgl', //path to homepage
                     'label' => 'Die Ngl', //visible label
                     'title' => 'Die Ngl' //tooltip text
                 ]);
@@ -131,7 +138,7 @@ use Pimcore\Model\Document\Page;
 
                 $mainNavigation->addPage([
                     'order' => -1, // put it in front of all the others
-                    'uri' => '/de#news', //path to homepage
+                    'uri' => '/#news', //path to homepage
                     'label' => 'News', //visible label
                     'title' => 'News' //tooltip text
                 ]);
