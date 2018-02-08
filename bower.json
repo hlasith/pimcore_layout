@@ -13,11 +13,13 @@
   "devDependencies": {
     "bootstrap": "4.0.0-alpha.6",
     "requirejs": "latest",
-    "slick-carousel": "1.7.1"
+    "slick-carousel": "1.7.1",
+    "ngl-ui-kit": "git@github.com:vitapublic/ngl-ui-kit.git"
   },
   "dependencies": {
     "bootstrap": "v4.0.0-alpha.6",
     "requirejs": "2.3.5",
-    "slick-carousel": "1.7.1"
+    "slick-carousel": "1.7.1",
+    "ngl-ui-kit": "git@github.com:vitapublic/ngl-ui-kit.git#ee495b4a446b17bd9104730553edd3556f6da1dc"
   }
 }

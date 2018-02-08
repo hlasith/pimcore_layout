@@ -1,22 +1,22 @@
 // general styles on HTML elements (h*, p, table, etc.)
 
 // import bootstrap
-@import "./../../public/vendor/bootstrap/scss/bootstrap";
-@import "./../../public/vendor/bootstrap/scss/bootstrap-grid";
+@import "./../../web/vendor/bootstrap/scss/bootstrap";
+@import "./../../web/vendor/bootstrap/scss/bootstrap-grid";
 
 // import font awesome
 //@import "../../vendor/font-awesome-sass/assets/stylesheets/font-awesome";
 
 // import slick carousel
-@import "./../../public/vendor/slick-carousel/slick/slick.scss";
+@import "./../../web/vendor/slick-carousel/slick/slick.scss";
 
 // import lobibox
-@import "./../../public/vendor/lobibox/dist/css/lobibox";
+@import "./../../web/vendor/lobibox/dist/css/lobibox";
 
 // import ngl variables
-@import "./../../public/vendor/ngl-ui-kit/Sourcecode/scss/ngl_pro_rules";
-@import "./../../public/vendor/ngl-ui-kit/Sourcecode/scss/ngl_pro_modular";
-@import "./../../public/vendor/ngl-ui-kit/Sourcecode/scss/ngl_pro_utilities";
+@import "./../../web/vendor/ngl-ui-kit/Sourcecode/scss/ngl_pro_rules";
+@import "./../../web/vendor/ngl-ui-kit/Sourcecode/scss/ngl_pro_modular";
+@import "./../../web/vendor/ngl-ui-kit/Sourcecode/scss/ngl_pro_utilities";
 
 // ngl general styles
 body {
@@ -112,7 +112,7 @@ body {
 }
 
 //import mobile
-@import "./../../public/vendor/ngl-ui-kit/Sourcecode/scss/ngl_pro_mobile";
+@import "./../../web/vendor/ngl-ui-kit/Sourcecode/scss/ngl_pro_mobile";
 
 //bootstrap addition
 .navbar-expand {

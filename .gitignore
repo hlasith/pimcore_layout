@@ -6,3 +6,4 @@ var
 install-profiles
 node_modules
 
+/.remeber_dependencies.json

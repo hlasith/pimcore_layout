@@ -10,8 +10,8 @@ module.exports = function (grunt) {
     // configurable paths
     var dirConfig = {
         assets: 'assets',
-        web: 'web',
-        temp: 'web/js/temp',
+        web: 'web/static',
+        temp: 'web/static/js/temp',
 
     };
 
@@ -23,25 +23,24 @@ module.exports = function (grunt) {
         /**********************************************************************************************************/
         clean: {
             first: [
-                "web/css/*.css",
-                "web/js/temp/*.html",
-                "web/js/*-min.js"
+                "web/static/css/ngl_pro_main*.css",
+                "web/static/js/*-min.js"
             ],
             // we need a second part to get rid of the temp template files
             second: [
-                "web/js/temp"
+                "web/static/js/temp"
             ],
             // tmp: [
             //     "tmp*"
             // ],
             // webhtml: [
-            //     "web/*.html"
+            //     "web/static/*.html"
             // ],
             // tmpRevisionedCss: [
-            //     "web/css/styles.*.css"
+            //     "web/static/css/styles.*.css"
             // ],
             // stylesCss: [
-            //     "web/css/ngl_pro_main.css"
+            //     "web/static/css/ngl_pro_main.css"
             // ]
         },
 
@@ -67,7 +66,7 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    src: 'web/css/ngl_pro*.css',
+                    src: 'web/static/css/ngl_pro*.css',
                     dest: ''
                 }]
             }
@@ -93,8 +92,8 @@ module.exports = function (grunt) {
         requirejs: {
             compile: {
                 options: {
-                    baseUrl: "web/js",
-                    mainConfigFile: "web/js/main.js",
+                    baseUrl: "web/static/js",
+                    mainConfigFile: "web/static/js/main.js",
                     include: [
                         '../vendor/requirejs/require',
                         'ngl'
@@ -103,7 +102,7 @@ module.exports = function (grunt) {
                         // nothing to exclude because its the standalone version
                     ],
                     optimizeCss: "standard",
-                    out: "web/js/ngl-min.js"
+                    out: "web/static/js/ngl-min.js"
                 }
             }
         },
@@ -120,7 +119,7 @@ module.exports = function (grunt) {
             js: {
                 files: [{
                     src: [
-                        'web/js/ngl-min.js'
+                        'web/static/js/ngl-min.js'
                     ]
                 }]
             }
@@ -133,7 +132,7 @@ module.exports = function (grunt) {
         css_import: {
             simple_concat: {
                 files: {
-                    'web/css/ngl_pro_main.css': ['web/css/ngl_pro_main.css'],
+                    'web/static/css/ngl_pro_main.css': ['web/static/css/ngl_pro_main.css'],
                 }
             }
         },
@@ -150,31 +149,11 @@ module.exports = function (grunt) {
         },
 
         /**********************************************************************************************************/
-        /*     Copy job                                                                                           */
-        /**********************************************************************************************************/
-        copy: {
-            tmp: {
-                files: [{expand: true, src: ['web/**'], dest: 'tmp/'}]
-            },
-            reset: {
-                files: [
-                    {expand: true, cwd: 'tmp/web', src: ['css/*'], dest: 'web/'},
-                    {expand: true, cwd: 'tmp/web', src: ['images/*'], dest: 'web/'},
-                    {expand: true, cwd: 'tmp/web', src: ['js/*'], dest: 'web/'}
-                ]
-            },
-
-            htmlTmpToweb: {
-                files: [{expand: true, cwd: 'tmp', src: ['*.html'], dest: 'web/'}]
-            }
-        },
-
-        /**********************************************************************************************************/
         /*     Smartrev job                                                                                       */
         /**********************************************************************************************************/
         smartrev: {
             options: {
-                cwd: 'web/',
+                cwd: 'web/static/',
                 noRename: [
                     '*.html',
                     'js/main.js',
