@@ -89,7 +89,7 @@ use Pimcore\Model\Document\Page;
     <script>window.Tether = {};</script>
 </head>
 
-<body class="<?= $isPortal ? "ngl-pro-home" : '' ?>">
+<body id="ngl-pro" class="<?= $isPortal ? "ngl-pro-home" : 'ngl-pro-edit' ?>">
 
 <header class="fixed-top">
     <?php
@@ -188,15 +188,68 @@ use Pimcore\Model\Document\Page;
 
 
 <?php if (!$isPortal): ?>
+    <section>
+
+        <!-- NGL PRO Content -->
+        <div class="container px-3 pb-3 mt-5">
+
+            <!-- user settings -->
+            <div class="row ngl-edit-nav py-3">
+                <div class="col-3">
+                    <h3 class="mb-0 mt-4">Datenschutz</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-12 mt-4">
+                    <p><u>Datenschutzbestimmungen für die Teilnahme an einer eSport Online Veranstaltung:</u>
+                    </p>
+                    <h5 class="mb-4"><strong> Allgemeines</strong></h5>
+                    <p>Die nachfolgenden Darstellungen geben Dir einen Überblick darüber, wie das eSportStudio
+                        (eSport Studio GmbH & Co.KG, Ganghoferstr. 68, 80339 München) als Veranstalter oder/und
+                        Kooperationspartner/durchführendes Unternehmen eines anderen Veranstalters (nachfolgend
+
+                        Online-Werbung in Bezug auf nutzungsbasierte Online-Werbung. Den gültigen
+                        Selbstregulierungskodex kannst Du unter folgendem Link einsehen:
+                        <a class="ngl-link-primary font-weight-bold" href="http://www.meine-cookies.org/ddow.html" target="_blank">www.meine-cookies.org/ddow.html</a>
+                    </p>
+
+                    <p>Deine&nbsp;Datenschutzeinstellungen bei Twitter kannst Du&nbsp;in den Konto-Einstellungen
+                        unter <a class="ngl-link-primary font-weight-bold" href="http://twitter.com/account/settings" target="_blank">http://twitter.com/account/settings </a> ändern.</p>
+                    <h5 class="mb-4"><strong> Einwilligungserklärungen</strong></h5>
+                    <p>Durch Deine Zustimmung zu den Datenschutzbestimmungen gibst Du zugleich folgende
+                        Einwilligungen ab:</p>
+
+
+
+                    <br>
+                    <h5 class="mb-4"><strong> Sonstige Bestimmungen</strong></h5>
+
+                    <p>eSport Studio behält sich das Recht vor, diese Datenschutzbestimmungen jederzeit nach
+                        Maßgabe der gesetzlichen und rechtlichen Vorschriften zu ändern. Wir werden Dich von
+                        einer Änderung der Bestimmungen per E-Mail in Kenntnis setzen. Du kannst der Änderung
+                        innerhalb von zwei Wochen per E-Mail an <a class="ngl-link-primary font-weight-bold" href="mailto:info@eSportStudio.de" target="_top">info@eSportStudio.de</a>
+                        widersprechen. Nach Ablauf
+                        dieser Frist gilt die Änderung von Dir als angenommen. Sofern Du widersprichst, ist
+                        eSport Studio berechtigt, Deine Registrierung zu löschen.</p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- END NGL PRO Content -->
+
+    </section>
 
     <div id="content" class="container">
         <?php
         $hideLeftNav     = $document->getProperty('leftNavHide') || $this->getViewParameter('hideLeftNav', false);
         $showBreadcrumbs = $this->getViewParameter('showBreadcrumbs', true);
 
-        $mainColClass = 'col-md-9 col-md-push-3';
+        $mainColClass = '';
         if ($hideLeftNav) {
-            $mainColClass = 'col-md-12';
+            $mainColClass = '';
         }
         ?>
 
