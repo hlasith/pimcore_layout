@@ -11,6 +11,8 @@
 $this->headTitle($this->input('headline')->getData());
 ?>
 
-<div class="page-header">
-    <h1><?= $this->input('headline') ?></h1>
+<div class="row ngl-edit-nav py-3 mt-5">
+    <div class="col-3">
+        <h3 class="mb-0 mt-4 mb-3"><?= $this->input('headline') ?></h3>
+    </div>
 </div>

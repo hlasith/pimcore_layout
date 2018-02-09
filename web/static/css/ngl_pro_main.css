@@ -8467,10 +8467,6 @@ body {
     body h6.border-top {
       border-top: 1px solid #818792;
       padding-top: 10px; }
-  body ul {
-    list-style: none;
-    padding: 0;
-    margin: 0; }
   body table td {
     border-top: 1px solid #585c61 !important; }
   body table thead th {
@@ -8485,8 +8481,13 @@ body {
   body footer {
     background: #00cc9e; }
     body footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
       width: 300px;
       height: 50px; }
+      body footer ul a {
+        color: #000; }
   body.ngl-pro-edit {
     background: #fff;
     color: #253043; }
@@ -8551,6 +8552,9 @@ body {
     text-transform: uppercase; }
   body #home #ngl-pro-carousel .carousel-item .ngl-slider-overlay {
     min-height: 615px; }
+  body.ngl-pro-edit #content a {
+    color: #00cc9e;
+    font-weight: bold; }
 
 @media (max-width: 767px) {
   .ngl-main-nav {

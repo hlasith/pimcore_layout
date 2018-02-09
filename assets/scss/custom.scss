@@ -75,3 +75,11 @@
     }
   }
 }
+
+
+// Pimcore Specific
+
+&.ngl-pro-edit #content a {
+  color:$ngl-color-theme;
+  font-weight: bold;
+}

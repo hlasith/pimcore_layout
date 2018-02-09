@@ -44,11 +44,6 @@ body {
       }
     }
   }
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
   table {
     td {
       border-top: 1px solid $ngl-color-grey !important;
@@ -70,10 +65,16 @@ body {
   }
   footer {
     background: $ngl-color-theme;
-
     ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
       width: 300px;
       height: 50px;
+
+      a {
+        color: $ngl-color-black;
+      }
     }
   }
   &.ngl-pro-edit {
