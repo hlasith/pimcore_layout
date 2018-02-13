@@ -2,8 +2,10 @@ vendor
 .idea
 tmp
 cache
-var
 install-profiles
 node_modules
+var/recyclebin
+var/logs
+var/versions
 
 /.remeber_dependencies.json
