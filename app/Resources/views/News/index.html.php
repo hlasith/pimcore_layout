@@ -49,33 +49,14 @@ $this->extend('layout.html.php');
             <?php
             $newsCount++;
             } ?>
-                        </div>
-<!--            <div class="col-12 col-md-6 mt-3">-->
-<!--                <a href="eAdler-Challenge-erste-Gewinner.html">-->
-<!--                    <div class="thumbnail">-->
-<!--                        <img src="images/ngl_1130x635_eAdler.jpg" width="100%">-->
-<!--                        <div class="caption">-->
-<!--                            <span class="captionSubHeader">Das sind die Gewinner der ersten Qualifier</span>-->
-<!--                            <h3>eAdler Challenge: Diese Teilnehmer fahren nach Frankfurt</h3>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </a>-->
-<!--            </div>-->
-<!--            <div class="col-12 col-md-6 mt-3">-->
-<!--                <a href="CosmosDirekt-CampusCup-letzte-plaetze.html">-->
-<!--                    <div class="thumbnail">-->
-<!--                        <img src="images/ngl_1130x635_cosmos.jpg" width="100%">-->
-<!--                        <div class="caption">-->
-<!--                            <span class="captionSubHeader">Gewinnt 5.000 Euro und ein professionelles FIFA-Coaching</span>-->
-<!--                            <h3>CosmosDirekt CampusCup: Sichert euch die letzten Plätze!</h3>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </a>-->
-<!--            </div>-->
+</div>
 
 
 
 
-<!-- pagination start -->
-
-<!-- pagination end -->
+    <!-- pagination start -->
+    <?= $this->render(
+        "Includes/paging.html.php",
+        get_object_vars($this->news->getPages("Sliding"))
+    ); ?>
+    <!-- pagination end -->
