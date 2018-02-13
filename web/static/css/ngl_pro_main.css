@@ -8555,7 +8555,7 @@ body {
   body.ngl-pro-edit #content a {
     color: #00cc9e;
     font-weight: bold; }
-  body.ngl-pro-edit .img-thumbnail img {
+  body.ngl-pro-edit .img-thumbnail img, body.ngl-pro-edit .thumbnail img {
     width: 100%;
     height: auto; }
 

@@ -20,18 +20,18 @@ $news = $this->news;
 
 <section class="area-wysiwyg">
 
-    <div class="page-header">
-        <h1><?= $news->getTitle(); ?></h1>
+    <div class="row ngl-edit-nav py-3 mt-5">
+        <div class="col-12">
+            <h3 class="mb-0 mt-4 mb-3"><?= $news->getTitle(); ?></h3>
+        </div>
     </div>
+    <h5 class="mb-4"><?= $news->getShortText(); ?></h5>
 
-    <div class="lead">
-        <p><?= $news->getShortText(); ?></p>
-    </div>
 
-    <?= $news->getText(); ?>
+
 
     <div class="row">
-        <?php for ($i = 1; $i <= 3; $i++) { ?>
+        <?php for ($i = 1; $i <= 1; $i++) { ?>
 
             <?php
             /** @var \Pimcore\Model\Document\Tag\Image $image */
@@ -39,14 +39,17 @@ $news = $this->news;
             ?>
 
             <?php if ($image) { ?>
-                <div class="col-lg-3">
-                    <a href="<?= $image->getThumbnail("galleryLightbox"); ?>" class="thumbnail">
-                        <?= $image->getThumbnail("galleryThumbnail")->getHTML(); ?>
-                    </a>
+
+                <div class="col-12">
+                    <div class="img-thumbnail">
+                        <?= $image->getThumbnail(["width" => 1130, "format" => "jpeg"])->getHTML(); ?>
+                    </div>
                 </div>
             <?php } ?>
 
         <?php } ?>
     </div>
+
+    <?= $news->getText(); ?>
 
 </section>
