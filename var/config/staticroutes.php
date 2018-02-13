@@ -1,22 +1,26 @@
-<?php
+<?php 
 
 return [
     1 => [
+        "id" => 1,
         "name" => "news",
         "pattern" => "/(.*)_n([\\d]+)/",
-        "reverse" => "%prefix/%text_n%id",
+        "reverse" => "%prefix/%text_n%id.html",
         "module" => "",
         "controller" => "news",
         "action" => "detail",
         "variables" => "text,id",
-        "defaults" => "",
-        "siteId" => "0",
-        "priority" => "1",
-        "creationDate" => "0",
-        "modificationDate" => "0",
-        "id" => "1"
+        "defaults" => "_locale=de",
+        "siteId" => [
+
+        ],
+        "priority" => 1,
+        "legacy" => FALSE,
+        "creationDate" => 1518540993,
+        "modificationDate" => 1518541330
     ],
     2 => [
+        "id" => 2,
         "name" => "blog",
         "pattern" => "/(.*)_b([\\d]+)/",
         "reverse" => "%prefix/%text_b%id",
@@ -24,12 +28,14 @@ return [
         "controller" => "blog",
         "action" => "detail",
         "variables" => "text,id",
-        "defaults" => "",
-        "siteId" => "0",
-        "priority" => "1",
-        "creationDate" => "1388391249",
-        "modificationDate" => "1388391368",
-        "id" => "2"
+        "defaults" => "_locale=de",
+        "siteId" => [
+
+        ],
+        "priority" => 1,
+        "legacy" => FALSE,
+        "creationDate" => 1388391249,
+        "modificationDate" => 1518541325
     ],
     3 => [
         "name" => "category-example",
@@ -57,6 +63,7 @@ return [
         "variables" => "_locale",
         "defaults" => "_locale=en",
         "siteId" => [
+
         ],
         "priority" => 0,
         "legacy" => FALSE,
@@ -80,5 +87,5 @@ return [
         "legacy" => FALSE,
         "creationDate" => 1490874774,
         "modificationDate" => 1490874774
-    ],
+    ]
 ];

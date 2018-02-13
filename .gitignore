@@ -7,5 +7,6 @@ node_modules
 var/recyclebin
 var/logs
 var/versions
+var/sessions
 
 /.remeber_dependencies.json

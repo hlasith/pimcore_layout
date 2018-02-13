@@ -11,7 +11,7 @@ $this->extend('layout.html.php');
 
 <?php
 // set page meta-data
-$this->headTitle()->set($this->news->getTitle());
+$this->headTitle()->set($this->news->getPageTitle());
 $this->headMeta()->setDescription($this->news->getShortText(), 160);
 
 /** @var \Pimcore\Model\DataObject\News $news */
@@ -22,7 +22,7 @@ $news = $this->news;
 
     <div class="row ngl-edit-nav py-3 mt-5">
         <div class="col-12">
-            <h3 class="mb-0 mt-4 mb-3"><?= $news->getTitle(); ?></h3>
+            <h3 class="mb-0 mt-4 mb-3"><?= $news->getPageTitle(); ?></h3>
         </div>
     </div>
     <h5 class="mb-4"><?= $news->getShortText(); ?></h5>
