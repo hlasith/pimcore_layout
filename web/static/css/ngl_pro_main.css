@@ -8555,6 +8555,9 @@ body {
   body.ngl-pro-edit #content a {
     color: #00cc9e;
     font-weight: bold; }
+  body.ngl-pro-edit .img-thumbnail img {
+    width: 100%;
+    height: auto; }
 
 @media (max-width: 767px) {
   .ngl-main-nav {

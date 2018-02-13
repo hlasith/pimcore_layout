@@ -43,8 +43,5 @@ foreach ($this->news as $news) { ?>
 <?php } ?>
 
 <!-- pagination start -->
-<?= $this->render(
-    "Includes/paging.html.php",
-    get_object_vars($this->news->getPages("Sliding"))
-); ?>
+
 <!-- pagination end -->

@@ -18,7 +18,7 @@ class NewsController extends FrontendController
 
         $paginator = new Paginator($newsList);
         $paginator->setCurrentPageNumber($request->get('page'));
-        $paginator->setItemCountPerPage(5);
+        $paginator->setItemCountPerPage(3);
 
         $this->view->news = $paginator;
     }

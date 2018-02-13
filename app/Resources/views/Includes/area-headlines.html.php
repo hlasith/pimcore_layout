@@ -8,15 +8,13 @@
 
 <?php if ($this->editmode || !$this->input("headline")->isEmpty()) { ?>
     <div class="row ngl-edit-nav py-3">
-        <div class="col-3">
+        <div class="col-12">
             <h2 class="mb-0 mt-4"><?= $this->input("headline"); ?></h2>
         </div>
     </div>
 <?php } ?>
 
 <?php if ($this->editmode || !$this->wysiwyg("lead")->isEmpty()) { ?>
-    <div class="lead">
-        <?= $this->wysiwyg("lead", ["height" => 100]); ?>
-    </div>
+    <h5 class="mb-4"><?= $this->wysiwyg("lead", ["height" => 100]); ?></h5>
 <?php } ?>
 

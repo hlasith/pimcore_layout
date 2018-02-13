@@ -6,14 +6,14 @@
  */
 ?>
 
-<section class="area-image">
+<section class="img-thumbnail">
 
     <?php if(!$this->editmode) { ?>
-        <a href="<?= $this->image("image")->getThumbnail("galleryLightbox"); ?>" class="thumbnail">
+        <a href="<?= $this->image("image")->getThumbnail("galleryLightbox"); ?>" class="">
     <?php } ?>
 
         <?= $this->image("image", [
-            "thumbnail" => "content"
+//            "thumbnail" => "content"
         ]); ?>
 
     <?php if(!$this->editmode) { ?>
