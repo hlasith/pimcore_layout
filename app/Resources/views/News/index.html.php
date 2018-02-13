@@ -24,6 +24,7 @@ $this->extend('layout.html.php');
                         'text'   => $news->getTitle(),
                         'prefix' => $this->document->getFullPath(),
                     ]);
+                    var_dump($detailLink); die();
                     ?>
 
                    <?php if($newsCount == 0): ?>

@@ -8552,6 +8552,9 @@ body {
     text-transform: uppercase; }
   body #home #ngl-pro-carousel .carousel-item .ngl-slider-overlay {
     min-height: 615px; }
+  body.ngl-pro-home .img-thumbnail img, body.ngl-pro-home .thumbnail img {
+    width: 100%;
+    height: auto; }
   body.ngl-pro-edit #content a {
     color: #00cc9e;
     font-weight: bold; }

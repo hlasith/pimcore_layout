@@ -38,19 +38,22 @@ return [
         "modificationDate" => 1518541325
     ],
     3 => [
+        "id" => 3,
         "name" => "category-example",
         "pattern" => "@/category\\-example@",
         "reverse" => "/en/category-example",
         "module" => "",
         "controller" => "Category\\Example",
         "action" => "test",
-        "variables" => NULL,
+        "variables" => "",
         "defaults" => NULL,
-        "siteId" => NULL,
-        "priority" => "1",
-        "creationDate" => "1419933908",
-        "modificationDate" => "1419933931",
-        "id" => "3"
+        "siteId" => [
+
+        ],
+        "priority" => 1,
+        "legacy" => FALSE,
+        "creationDate" => 1419933908,
+        "modificationDate" => 1518544046
     ],
     4 => [
         "id" => 4,
@@ -87,5 +90,23 @@ return [
         "legacy" => FALSE,
         "creationDate" => 1490874774,
         "modificationDate" => 1490874774
+    ],
+    6 => [
+        "id" => 6,
+        "name" => "news2",
+        "pattern" => "/(.*)_n([\\d]+)/",
+        "reverse" => "/%text_n%id.html",
+        "module" => NULL,
+        "controller" => "content",
+        "action" => "portal",
+        "variables" => "text,id",
+        "defaults" => "_locale=de",
+        "siteId" => [
+
+        ],
+        "priority" => 1,
+        "legacy" => FALSE,
+        "creationDate" => 1518543906,
+        "modificationDate" => 1518544735
     ]
 ];

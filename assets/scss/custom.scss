@@ -78,7 +78,12 @@
 
 
 // Pimcore Specific
-
+&.ngl-pro-home{
+  .img-thumbnail img, .thumbnail img {
+    width:100%;
+    height:auto;
+  }
+}
 &.ngl-pro-edit{
   #content a {
     color:$ngl-color-theme;

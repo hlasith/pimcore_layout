@@ -12,6 +12,9 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Pimcore\Model\DataObject\News;
+use Zend\Paginator\Paginator;
+
 
 class ContentController extends FrontendController
 {
@@ -28,11 +31,21 @@ class ContentController extends FrontendController
      * @ResponseHeader("X-Custom-Header", values={"Foo", "Bar"})
      * @ResponseHeader("X-Custom-Header2", values="Bazinga", replace=true)
      */
-    public function portalAction()
+    public function portalAction(Request $request)
     {
         // you can also set the header via code
         $this->addResponseHeader('X-Custom-Header3', ['foo', 'bar']);
 
+        // get a list of news objects and order them by date
+        $newsList = new News\Listing();
+        $newsList->setOrderKey('date');
+        $newsList->setOrder('DESC');
+
+        $paginator = new Paginator($newsList);
+        $paginator->setCurrentPageNumber($request->get('page'));
+        $paginator->setItemCountPerPage(3);
+
+        $this->view->news = $paginator;
         $this->view->isPortal = true;
     }
 

@@ -12,39 +12,43 @@
             <div class="col-12">
                 <h5 class="border-top ngl-border-secondary  py-3 uppercase">News</h5>
             </div>
+            <?php
+            /** @var \Pimcore\Model\DataObject\News $news */
+            $newsCount = 0;
+            foreach ($this->news as $news) { ?>
+
+            <?php
+            $detailLink = $this->path('news2', [
+                'id'     => $news->getId(),
+                'text'   => $news->getTitle()
+
+            ]);
+          
+            ?>
+
+            <?php if($newsCount == 0): ?>
             <div class="col-12 mt-3">
-                <a href="CosmosDirekt-CampusCup-Karlsruhe-2.html">
-                    <div class="thumbnail">
-                        <img src="/static/img/ngl/cosmos_1130x635.jpg" width="100%">
-                        <div class="caption">
-                            <span class="captionSubHeader">Zweite Qualifikations-Runde gestartet</span>
-                            <h3>CosmosDirekt CampusCup: "KIT SC" triumphiert in Karlsruhe</h3>
+                <?php else: ?>
+                <div class="col-12 col-md-6 mt-3 pull-left">
+                    <?php endif; ?>
+
+                    <a href="<?= $detailLink; ?>">
+                        <div class="thumbnail">
+                            <?= $news->getImage_1()->getThumbnail(["width" => 1130, "format" => "jpeg"])->getHTML(["class" => "media-object"]); ?>
+
+
+                            <div class="caption">
+                                <span class="captionSubHeader"><?= $news->getShortText(); ?></span>
+                                <h3><?= $news->getTitle(); ?></h3>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-md-6 mt-3">
-                <a href="ngl-proclub-series-spieltag-910.html">
-                    <div class="thumbnail">
-                        <img src="/static/img/ngl/proclub.jpg" width="100%">
-                        <div class="caption">
-                            <span class="captionSubHeader">"Ghetto Boyz" mit erster Niederlage</span>
-                            <h3>Knaller-Woche in der NGL Pro Club Series</h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-md-6 mt-3">
-                <a href="Gladbach-Qualifier-12.html">
-                    <div class="thumbnail">
-                        <img src="/static/img/ngl/jeff95.jpg" width="100%">
-                        <div class="caption">
-                            <span class="captionSubHeader">Prominenz bei ersten Qualifiern</span>
-                            <h3>Mönchengladbach: Erste Offline-Qualifikanten stehen fest</h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+
+                </div>
+
+                <?php
+                $newsCount++;
+                } ?>
         </div>
     </div>
 </section>
