@@ -13,7 +13,6 @@ use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Pimcore\Model\DataObject\News;
-use Pimcore\Model\DataObject\Environment;
 use Zend\Paginator\Paginator;
 
 
@@ -23,8 +22,7 @@ class ContentController extends FrontendController
 
     public function defaultAction()
     {
-        $environment = new Environment\Listing();
-        $this->view->environment = $environment;
+
     }
 
     /**
@@ -51,9 +49,6 @@ class ContentController extends FrontendController
         $paginator->setItemCountPerPage(3);
 
         $this->view->news = $paginator;
-
-        $environment = new Environment\Listing();
-        $this->view->environment = $environment;
         $this->view->isPortal = true;
     }
 

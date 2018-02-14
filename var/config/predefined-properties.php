@@ -52,5 +52,18 @@ return [
         "inheritable" => TRUE,
         "creationDate" => 1482501247,
         "modificationDate" => 1482501278
+    ],
+    6 => [
+        "id" => 6,
+        "name" => "SetEnvironment",
+        "description" => "",
+        "key" => "environmentVariables",
+        "type" => "object",
+        "data" => "",
+        "config" => "",
+        "ctype" => "document",
+        "inheritable" => TRUE,
+        "creationDate" => 1518617039,
+        "modificationDate" => 1518618371
     ]
 ];

@@ -18,7 +18,7 @@ class NewsController extends FrontendController
 
         $paginator = new Paginator($newsList);
         $paginator->setCurrentPageNumber($request->get('page'));
-        $paginator->setItemCountPerPage(3);     
+        $paginator->setItemCountPerPage(3);
         $this->view->news = $paginator;
     }
 
@@ -34,7 +34,6 @@ class NewsController extends FrontendController
             // this will trigger a 404 error response
             throw $this->createNotFoundException('Invalid request');
         }
-
         $this->view->news = $news;
     }
 }

@@ -101,6 +101,8 @@ use Pimcore\Model\Document\Page;
 //    }
 
     $mainNavStartNode = $document->getProperty('mainNavStartNode');
+    $environmentObject = $document->getProperty('environmentVariables');
+
     if (!$mainNavStartNode) {
         $mainNavStartNode = Document::getById(1);
     }
@@ -167,16 +169,11 @@ use Pimcore\Model\Document\Page;
                         <?php } ?>
                     <?php } ?>
                 </ul>
-                <?php $currentEnvironment = $document->getProperty('currentEnvironment');?>
-                <?php
-                if ($isEnvironment) {
-                    foreach ($isEnvironment as $environment) {
 
-                        if($environment->getEnvironmentName() == $currentEnvironment){ ?>
-                            <a class="navbar-brand mr-0 font-weight-bold ngl-link-primary" href="<?= $environment->getRegisterUrl() ?>"><span>Anmelden</span></a>
-                        <?php }
-                    }
-                }   ?>
+
+                <a class="navbar-brand mr-0 font-weight-bold ngl-link-primary" href="<?= $environmentObject->getRegisterUrl() ?>"><span>Anmelden</span></a>
+
+
 
             </div>
         </div>
