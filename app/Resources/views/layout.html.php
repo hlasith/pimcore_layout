@@ -171,7 +171,14 @@ use Pimcore\Model\Document\Page;
                         <?php } ?>
                     <?php } ?>
                 </ul>
-                <a class="navbar-brand mr-0 font-weight-bold ngl-link-primary" href="#"><span>Anmelden</span></a>
+                <?php $currentEnvironment = $document->getProperty('currentEnvironment');?>
+                <?php foreach ($this->environment as $environment) {
+
+                    if($environment->getEnvironmentName() == $currentEnvironment){ ?>
+                        <a class="navbar-brand mr-0 font-weight-bold ngl-link-primary" href="<?= $environment->getRegisterUrl() ?>"><span>Anmelden</span></a>
+                    <?php }
+                } ?>
+
             </div>
         </div>
     </nav>
