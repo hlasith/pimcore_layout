@@ -19,8 +19,12 @@ use Zend\Paginator\Paginator;
 
 class ContentController extends FrontendController
 {
+
+
     public function defaultAction()
     {
+        $environment = new Environment\Listing();
+        $this->view->environment = $environment;
     }
 
     /**
@@ -49,9 +53,7 @@ class ContentController extends FrontendController
         $this->view->news = $paginator;
 
         $environment = new Environment\Listing();
-
         $this->view->environment = $environment;
-
         $this->view->isPortal = true;
     }
 
