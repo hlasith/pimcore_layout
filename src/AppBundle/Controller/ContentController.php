@@ -56,6 +56,11 @@ class ContentController extends FrontendController
     {
     }
 
+    public function tournamentAction()
+    {
+        
+    }
+
     public function websiteTranslationsAction()
     {
     }

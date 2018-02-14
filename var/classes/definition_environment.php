@@ -1,7 +1,7 @@
 <?php 
 
 /** 
-* Generated at: 2018-02-14T14:05:16+01:00
+* Generated at: 2018-02-14T15:54:04+01:00
 * Inheritance: no
 * Variants: no
 * Changed by: admin (4)
@@ -11,6 +11,7 @@
 Fields Summary: 
 - EnvironmentName [input]
 - registerUrl [input]
+- bootstrapperUrl [input]
 */ 
 
 
@@ -18,7 +19,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'environment',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1518613515,
+   'modificationDate' => 1518620044,
    'userOwner' => 4,
    'userModification' => 4,
    'parentClass' => '',
@@ -115,6 +116,31 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'unique' => false,
                  'name' => 'registerUrl',
                  'title' => 'registerUrl',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'datatype' => 'data',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+              )),
+              2 => 
+              Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+                 'fieldtype' => 'input',
+                 'width' => 300,
+                 'queryColumnType' => 'varchar',
+                 'columnType' => 'varchar',
+                 'columnLength' => 190,
+                 'phpdocType' => 'string',
+                 'regex' => '',
+                 'unique' => false,
+                 'name' => 'bootstrapperUrl',
+                 'title' => 'Bootstrapper Url',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,

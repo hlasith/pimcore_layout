@@ -19,9 +19,7 @@ use Pimcore\Model\Document\Page;
     <?php
     // portal detection => portal needs an adapted version of the layout
     $isPortal = $this->isPortal ?: false;
-
-    $isEnvironment = $this->environment ?: false;
-
+    
     /** @var Document|Page $document */
     $document = $this->document;
 

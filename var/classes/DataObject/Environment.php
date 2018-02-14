@@ -1,7 +1,7 @@
 <?php 
 
 /** 
-* Generated at: 2018-02-14T14:05:16+01:00
+* Generated at: 2018-02-14T15:54:04+01:00
 * Inheritance: no
 * Variants: no
 * Changed by: admin (4)
@@ -11,6 +11,7 @@
 Fields Summary: 
 - EnvironmentName [input]
 - registerUrl [input]
+- bootstrapperUrl [input]
 */ 
 
 namespace Pimcore\Model\DataObject;
@@ -20,6 +21,7 @@ namespace Pimcore\Model\DataObject;
 /**
 * @method static \Pimcore\Model\DataObject\Environment\Listing getByEnvironmentName ($value, $limit = 0) 
 * @method static \Pimcore\Model\DataObject\Environment\Listing getByRegisterUrl ($value, $limit = 0) 
+* @method static \Pimcore\Model\DataObject\Environment\Listing getByBootstrapperUrl ($value, $limit = 0) 
 */
 
 class Environment extends Concrete {
@@ -28,6 +30,7 @@ public $o_classId = 8;
 public $o_className = "environment";
 public $EnvironmentName;
 public $registerUrl;
+public $bootstrapperUrl;
 
 
 /**
@@ -89,6 +92,32 @@ public function getRegisterUrl () {
 */
 public function setRegisterUrl ($registerUrl) {
 	$this->registerUrl = $registerUrl;
+	return $this;
+}
+
+/**
+* Get bootstrapperUrl - Bootstrapper Url
+* @return string
+*/
+public function getBootstrapperUrl () {
+	$preValue = $this->preGetValue("bootstrapperUrl"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
+		return $preValue;
+	}
+	$data = $this->bootstrapperUrl;
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
+	}
+	return $data;
+}
+
+/**
+* Set bootstrapperUrl - Bootstrapper Url
+* @param string $bootstrapperUrl
+* @return \Pimcore\Model\DataObject\Environment
+*/
+public function setBootstrapperUrl ($bootstrapperUrl) {
+	$this->bootstrapperUrl = $bootstrapperUrl;
 	return $this;
 }
 
