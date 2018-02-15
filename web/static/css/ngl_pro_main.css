@@ -8561,6 +8561,8 @@ body {
   body.ngl-pro-edit .img-thumbnail img, body.ngl-pro-edit .thumbnail img {
     width: 100%;
     height: auto; }
+  body.tournament {
+    background: #0C101C url(../img/ngl/bg-1-Spiele-Deinen-Sport.jpg) no-repeat; }
 
 @media (max-width: 767px) {
   .ngl-main-nav {

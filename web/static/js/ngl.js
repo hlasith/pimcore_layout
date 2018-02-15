@@ -1,11 +1,11 @@
 define([
-    'config',
+    'configuration',
     'jquery',
     'tether',
     'bootstrap',
     'slick'  
 
-], function (Config,
+], function (Configuration,
              $,           
              Tether,
              Bootstrap,
@@ -25,7 +25,6 @@ define([
             if($(this).scrollTop() > 10) {
                 $('header').addClass('ngl-scroll-bg');
             } else {
-                console.log('thjfgjg');
                 $('header').removeClass('ngl-scroll-bg');
             }
         });

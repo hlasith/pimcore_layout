@@ -19,6 +19,8 @@ use Pimcore\Model\Document\Page;
     <?php
     // portal detection => portal needs an adapted version of the layout
     $isPortal = $this->isPortal ?: false;
+
+    $isTournament = $this->isTournament ?: false;
     
     /** @var Document|Page $document */
     $document = $this->document;
@@ -81,13 +83,13 @@ use Pimcore\Model\Document\Page;
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="/static/js/html5shiv.js"></script>
-    <script src="/static/js/respond.min.js"></script>
+    <!--<script src="/static/js/html5shiv.js"></script>-->
+    <!--<script src="/static/js/respond.min.js"></script>-->
     <![endif]-->
     <script>window.Tether = {};</script>
 </head>
 
-<body id="ngl-pro" class="<?= $isPortal ? "ngl-pro-home" : 'ngl-pro-edit' ?>">
+<body id="ngl-pro" class="<?= $isPortal ? "ngl-pro-home" : 'ngl-pro-edit' ?> <?= $isTournament ? "tournament" : '' ?>">
 
 <header class="fixed-top">
     <?php

@@ -5,6 +5,5 @@
  * @var \Pimcore\Templating\GlobalVariables $app
  */
 ?>
-
-<?= $this->template('Includes/content-headline.html.php'); ?>
+<script>window.Tether = {};</script>
 <?= $this->areablock('content'); ?>

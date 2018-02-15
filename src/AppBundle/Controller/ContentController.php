@@ -58,7 +58,7 @@ class ContentController extends FrontendController
 
     public function tournamentAction()
     {
-        
+        $this->view->isTournament = true; 
     }
 
     public function websiteTranslationsAction()
