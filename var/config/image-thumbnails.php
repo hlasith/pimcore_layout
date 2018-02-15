@@ -389,11 +389,9 @@ return [
     "featurerette" => [
         "items" => [
             [
-                "method" => "cover",
+                "method" => "scaleByWidth",
                 "arguments" => [
-                    "width" => "512",
-                    "height" => "260",
-                    "positioning" => "center",
+                    "width" => "481",
                     "doNotScaleUp" => "1"
                 ]
             ]

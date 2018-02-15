@@ -173,8 +173,6 @@ use Pimcore\Model\Document\Page;
 
                 <a class="navbar-brand mr-0 font-weight-bold ngl-link-primary" href="<?= $environmentObject->getRegisterUrl() ?>"><span>Anmelden</span></a>
 
-
-
             </div>
         </div>
     </nav>
@@ -183,7 +181,8 @@ use Pimcore\Model\Document\Page;
 </header>
 <?php if ($isPortal): ?>
     <?= $this->template('Includes/ngl-pro-carousel.html.php', ["environmentObject" => $environmentObject]) ?>
-    <?= $this->template('Includes/the-ngl.html.php') ?>
+    <div id="theNgl"></div>
+    <?php $this->slots()->output('_content'); ?>
     <?= $this->template('Includes/the-ngl-branding.html.php',["environmentObject" => $environmentObject]) ?>
     <?= $this->template('Includes/the-ngl-news.html.php') ?>
 <?php endif; ?>
@@ -223,8 +222,6 @@ use Pimcore\Model\Document\Page;
         </div>
 
     </div>
-<?php else: ?>
-    <?php $this->slots()->output('_content') ?>
 <?php endif; ?>
 <?php if ($isPortal): ?>
     <?= $this->template('Includes/the-ngl-partner.html.php') ?>
