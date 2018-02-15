@@ -182,9 +182,9 @@ use Pimcore\Model\Document\Page;
 
 </header>
 <?php if ($isPortal): ?>
-    <?= $this->template('Includes/ngl-pro-carousel.html.php') ?>
+    <?= $this->template('Includes/ngl-pro-carousel.html.php', ["environmentObject" => $environmentObject]) ?>
     <?= $this->template('Includes/the-ngl.html.php') ?>
-    <?= $this->template('Includes/the-ngl-branding.html.php') ?>
+    <?= $this->template('Includes/the-ngl-branding.html.php',["environmentObject" => $environmentObject]) ?>
     <?= $this->template('Includes/the-ngl-news.html.php') ?>
 <?php endif; ?>
 

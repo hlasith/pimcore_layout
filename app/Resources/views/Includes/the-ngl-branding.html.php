@@ -45,7 +45,7 @@
                                             registrieren</a>
                     /build -->
                     <!-- build:remove -->
-                    <a class="ngl-btn-primary font-weight-bold rounded text-uppercase mt-3" href="https://authentication-service.centos.vagrant/registration?client_id=57HUAFHMJ7aUomZwoUABAisbTIQa&amp;redirect_uri=https://ngl-one.centos.vagrant/tournament.html&amp;state=eyJob3N0VXJsIjoiIiwiaGFzaHJvdXRlciI6IiMiLCJ0eXBlIjoicmVkaXJlY3QifQ==">Kostenlos
+                    <a class="ngl-btn-primary font-weight-bold rounded text-uppercase mt-3" href="<?= $this->environmentObject->getRegisterUrl() ?>">Kostenlos
                         registrieren</a>
                     <!-- /build -->
                 </div>

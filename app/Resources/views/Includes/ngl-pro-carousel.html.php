@@ -23,7 +23,7 @@
                             <a class="ngl-btn-third font-weight-bold rounded text-uppercase mt-3" href="<%= registerUrl %>">Kostenlos anmelden</a>
                             /build -->
                             <!-- build:remove -->
-                            <a class="ngl-btn-third font-weight-bold rounded text-uppercase mt-3" href="https://authentication-service.centos.vagrant/registration?client_id=57HUAFHMJ7aUomZwoUABAisbTIQa&amp;redirect_uri=https://ngl-one.centos.vagrant/tournament.html&amp;state=eyJob3N0VXJsIjoiIiwiaGFzaHJvdXRlciI6IiMiLCJ0eXBlIjoicmVkaXJlY3QifQ==">Kostenlos anmelden</a>
+                            <a class="ngl-btn-third font-weight-bold rounded text-uppercase mt-3" href="<?= $this->environmentObject->getRegisterUrl() ?>">Kostenlos anmelden</a>
                             <!-- /build -->
                         </div>
                     </div>
