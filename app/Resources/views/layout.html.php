@@ -237,5 +237,22 @@ $this->headScript()->appendFile('/static/js/main.js');
 echo $this->headScript();
 ?>
 
+<?= $environmentObject->getEnablePiwik() ?>
+
+<?php if ($environmentObject->getEnablePiwik() == 1): ?>
+<script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+        var u="//<?= $environmentObject->getPiwikHostName() ?>/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '<?= $environmentObject->getPiwikSiteId() ?>']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'<?= $environmentObject->getPiwikJsFilepath()
+                ?>'; s.parentNode.insertBefore(g,s);
+    })();
+</script>
+<?php endif; ?>
 </body>
 </html>

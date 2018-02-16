@@ -1,7 +1,7 @@
 <?php 
 
 /** 
-* Generated at: 2018-02-14T15:54:04+01:00
+* Generated at: 2018-02-16T18:36:10+01:00
 * Inheritance: no
 * Variants: no
 * Changed by: admin (4)
@@ -9,9 +9,12 @@
 
 
 Fields Summary: 
-- EnvironmentName [input]
 - registerUrl [input]
 - bootstrapperUrl [input]
+- EnablePiwik [booleanSelect]
+- PiwikHostName [input]
+- PiwikSiteId [input]
+- PiwikJsFilepath [input]
 */ 
 
 
@@ -19,7 +22,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'environment',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1518620044,
+   'modificationDate' => 1518802570,
    'userOwner' => 4,
    'userModification' => 4,
    'parentClass' => '',
@@ -89,8 +92,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'phpdocType' => 'string',
                  'regex' => '',
                  'unique' => false,
-                 'name' => 'EnvironmentName',
-                 'title' => 'Environment Name',
+                 'name' => 'registerUrl',
+                 'title' => 'Register Url',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -114,8 +117,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'phpdocType' => 'string',
                  'regex' => '',
                  'unique' => false,
-                 'name' => 'registerUrl',
-                 'title' => 'registerUrl',
+                 'name' => 'bootstrapperUrl',
+                 'title' => 'Bootstrapper Url',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -130,6 +133,49 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'visibleSearch' => false,
               )),
               2 => 
+              Pimcore\Model\DataObject\ClassDefinition\Data\BooleanSelect::__set_state(array(
+                 'fieldtype' => 'booleanSelect',
+                 'yesLabel' => 'yes',
+                 'noLabel' => 'no',
+                 'emptyLabel' => 'empty',
+                 'options' => 
+                array (
+                  0 => 
+                  array (
+                    'key' => 'empty',
+                    'value' => 0,
+                  ),
+                  1 => 
+                  array (
+                    'key' => 'yes',
+                    'value' => 1,
+                  ),
+                  2 => 
+                  array (
+                    'key' => 'no',
+                    'value' => -1,
+                  ),
+                ),
+                 'width' => '',
+                 'queryColumnType' => 'tinyint(1) null',
+                 'columnType' => 'tinyint(1) null',
+                 'phpdocType' => 'boolean',
+                 'name' => 'EnablePiwik',
+                 'title' => 'EnablePiwik',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'datatype' => 'data',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+              )),
+              3 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                  'fieldtype' => 'input',
                  'width' => 300,
@@ -139,8 +185,58 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'phpdocType' => 'string',
                  'regex' => '',
                  'unique' => false,
-                 'name' => 'bootstrapperUrl',
-                 'title' => 'Bootstrapper Url',
+                 'name' => 'PiwikHostName',
+                 'title' => 'Piwik Host Name',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'datatype' => 'data',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+              )),
+              4 => 
+              Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+                 'fieldtype' => 'input',
+                 'width' => 300,
+                 'queryColumnType' => 'varchar',
+                 'columnType' => 'varchar',
+                 'columnLength' => 190,
+                 'phpdocType' => 'string',
+                 'regex' => '',
+                 'unique' => false,
+                 'name' => 'PiwikSiteId',
+                 'title' => 'Piwik Site Id',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'datatype' => 'data',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+              )),
+              5 => 
+              Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+                 'fieldtype' => 'input',
+                 'width' => 300,
+                 'queryColumnType' => 'varchar',
+                 'columnType' => 'varchar',
+                 'columnLength' => 190,
+                 'phpdocType' => 'string',
+                 'regex' => '',
+                 'unique' => false,
+                 'name' => 'PiwikJsFilepath',
+                 'title' => 'Piwik Js File path',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,

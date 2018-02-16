@@ -32,7 +32,7 @@ return [
         ]
     ],
     "piwik" => [
-        "piwik_url" => "",
+        "piwik_url" => "tracking-new.test.vitapublic.de",
         "api_token" => "",
         "report_token" => "",
         "api_client_options" => "",
@@ -40,10 +40,10 @@ return [
         "iframe_password" => "",
         "sites" => [
             "default" => [
-                "site_id" => NULL,
-                "code_before_init" => "",
-                "code_before_track" => "",
-                "code_after_track" => ""
+                "site_id" => 1,
+                "code_before_init" => "console.log(\"piwik Started\");",
+                "code_before_track" => "console.log(\"piwik running\");",
+                "code_after_track" => "console.log(\"piwik end\");"
             ]
         ]
     ]

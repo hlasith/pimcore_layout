@@ -3,25 +3,18 @@
 return [
     "general" => [
         "timezone" => "Europe/Berlin",
-        "php_cli" => "",
+        "path_variable" => "",
         "domain" => "",
         "redirect_to_maindomain" => FALSE,
-        "language" => "en",
+        "language" => "de",
         "validLanguages" => "en,de",
         "fallbackLanguages" => [
             "en" => "",
             "de" => ""
         ],
-        "theme" => "",
-        "contactemail" => "",
+        "defaultLanguage" => "",
         "loginscreencustomimage" => "",
         "disableusagestatistics" => FALSE,
-        "debug" => FALSE,
-        "debug_ip" => "",
-        "http_auth" => [
-            "username" => "",
-            "password" => ""
-        ],
         "debug_admin_translations" => FALSE,
         "devmode" => FALSE,
         "instanceIdentifier" => "",
@@ -48,10 +41,7 @@ return [
         ],
         "createredirectwhenmoved" => FALSE,
         "allowtrailingslash" => "no",
-        "allowcapitals" => "no",
-        "generatepreview" => TRUE,
-        "wkhtmltoimage" => "",
-        "wkhtmltopdf" => ""
+        "generatepreview" => TRUE
     ],
     "objects" => [
         "versions" => [
@@ -66,7 +56,8 @@ return [
         ],
         "icc_rgb_profile" => "",
         "icc_cmyk_profile" => "",
-        "hide_edit_image" => FALSE
+        "hide_edit_image" => FALSE,
+        "disable_tree_preview" => FALSE
     ],
     "services" => [
         "google" => [
@@ -114,7 +105,7 @@ return [
             "auth" => [
                 "method" => NULL,
                 "username" => "",
-                "password" => ""
+                "password" => NULL
             ]
         ],
         "debug" => [
@@ -139,9 +130,23 @@ return [
             "auth" => [
                 "method" => NULL,
                 "username" => "",
-                "password" => ""
+                "password" => NULL
             ]
         ],
-        "usespecific" => ""
+        "debug" => NULL,
+        "usespecific" => FALSE
+    ],
+    "branding" => [
+        "color_login_screen" => "",
+        "color_admin_interface" => ""
+    ],
+    "applicationlog" => [
+        "mail_notification" => [
+            "send_log_summary" => FALSE,
+            "filter_priority" => NULL,
+            "mail_receiver" => ""
+        ],
+        "archive_treshold" => "30",
+        "archive_alternative_database" => ""
     ]
 ];

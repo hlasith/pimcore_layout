@@ -17,7 +17,7 @@ return [
         "priority" => 1,
         "legacy" => FALSE,
         "creationDate" => 1518540993,
-        "modificationDate" => 1518541330
+        "modificationDate" => 1518790779
     ],
     2 => [
         "id" => 2,
@@ -95,7 +95,7 @@ return [
         "id" => 6,
         "name" => "news2",
         "pattern" => "/(.*)_n([\\d]+)/",
-        "reverse" => "/%text_n%id.html",
+        "reverse" => "%text_n%id.html",
         "module" => NULL,
         "controller" => "content",
         "action" => "portal",
@@ -107,6 +107,6 @@ return [
         "priority" => 1,
         "legacy" => FALSE,
         "creationDate" => 1518543906,
-        "modificationDate" => 1518544735
+        "modificationDate" => 1518791102
     ]
 ];
