@@ -1,6 +1,7 @@
 /web/vendor
 install-profiles
 node_modules
+var/sessions/*
 
 
 /.remeber_dependencies.json

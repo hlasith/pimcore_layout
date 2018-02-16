@@ -8563,6 +8563,9 @@ body {
     height: auto; }
   body.tournament {
     background: #0C101C url(../img/ngl/bg-1-Spiele-Deinen-Sport.jpg) no-repeat; }
+  body img.w-100 {
+    width: 100%;
+    height: auto; }
 
 @media (max-width: 767px) {
   .ngl-main-nav {
