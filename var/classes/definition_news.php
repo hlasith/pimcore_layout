@@ -1,7 +1,7 @@
 <?php 
 
 /** 
-* Generated at: 2018-02-13T17:47:29+01:00
+* Generated at: 2018-02-19T12:39:22+01:00
 * Inheritance: no
 * Variants: no
 * Changed by: admin (4)
@@ -17,7 +17,6 @@ Fields Summary:
 - date [datetime]
 - image_1 [image]
 - image_2 [image]
-- image_3 [image]
 */ 
 
 
@@ -25,7 +24,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'news',
    'description' => '',
    'creationDate' => 1368613289,
-   'modificationDate' => 1518540449,
+   'modificationDate' => 1519040362,
    'userOwner' => 0,
    'userModification' => 4,
    'parentClass' => '',
@@ -273,31 +272,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'columnType' => 'int(11)',
                  'phpdocType' => '\\Pimcore\\Model\\Asset\\Image',
                  'name' => 'image_2',
-                 'title' => 'Image',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'datatype' => 'data',
-                 'relationType' => false,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => false,
-              )),
-              3 => 
-              Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
-                 'fieldtype' => 'image',
-                 'width' => 350,
-                 'height' => 350,
-                 'uploadPath' => '',
-                 'queryColumnType' => 'int(11)',
-                 'columnType' => 'int(11)',
-                 'phpdocType' => '\\Pimcore\\Model\\Asset\\Image',
-                 'name' => 'image_3',
-                 'title' => 'Image',
+                 'title' => 'Teaser Bild (optional)',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,

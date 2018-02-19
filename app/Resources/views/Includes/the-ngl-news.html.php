@@ -23,6 +23,21 @@
                 'text'   => $news->getTitle()
 
             ]);
+
+
+            $images = [
+                $news->getImage_1(),
+                $news->getImage_2()
+            ];
+
+            // filter nulls
+            $images = array_filter($images);
+
+            if($images[1] != null) {
+                $teaserImg = $images[1];
+            }else {
+                $teaserImg = $images[0];
+            }
           
             ?>
 
@@ -34,7 +49,7 @@
 
                     <a href="<?= $detailLink; ?>">
                         <div class="thumbnail">
-                            <?= $news->getImage_1()->getThumbnail(["width" => 1130, "format" => "jpeg"])->getHTML(["class" => "media-object"]); ?>
+                            <?= $teaserImg->getThumbnail(["width" => 1130, "format" => "jpeg"])->getHTML(["class" => "media-object"]); ?>
 
 
                             <div class="caption">

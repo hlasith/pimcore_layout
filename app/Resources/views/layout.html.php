@@ -48,12 +48,17 @@ use Pimcore\Model\Document\Page;
         $this->headMeta()->setDescription($document->getDescription());
     }
 
-    $this->headTitle()->append("pimcore Demo");
+    $this->headTitle()->append("National Gaming League");
     $this->headTitle()->setSeparator(" : ");
 
     echo $this->headTitle();
 
+    // setting open graph tags
+//    $this->headMeta()->setProperty('og:title', 'my article title');
+    //    $this->headMeta()->setProperty('og:type', 'article');
+
     echo $this->headMeta();
+
     ?>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -14,16 +14,16 @@ $this->extend('layout.html.php');
 
 <div class="row">
             <?php
-            /** @var \Pimcore\Model\DataObject\News $news */
+            /** @var \Pimcore\Model\DataObject\News   $news */
             $newsCount = 0;
-            foreach ($this->news as $news) { ?>
-
-                    <?php
+            foreach ($this->news as $news) { 
+            
                     $detailLink = $this->path('news', [
                         'id'     => $news->getId(),
                         'text'   => $news->getTitle(),
                         'prefix' => $this->document->getFullPath(),
                     ]);
+
                     ?>
 
                    <?php if($newsCount == 0): ?>

@@ -1,7 +1,7 @@
 <?php 
 
 /** 
-* Generated at: 2018-02-13T17:47:29+01:00
+* Generated at: 2018-02-19T12:39:22+01:00
 * Inheritance: no
 * Variants: no
 * Changed by: admin (4)
@@ -17,7 +17,6 @@ Fields Summary:
 - date [datetime]
 - image_1 [image]
 - image_2 [image]
-- image_3 [image]
 */ 
 
 namespace Pimcore\Model\DataObject;
@@ -29,7 +28,6 @@ namespace Pimcore\Model\DataObject;
 * @method static \Pimcore\Model\DataObject\News\Listing getByDate ($value, $limit = 0) 
 * @method static \Pimcore\Model\DataObject\News\Listing getByImage_1 ($value, $limit = 0) 
 * @method static \Pimcore\Model\DataObject\News\Listing getByImage_2 ($value, $limit = 0) 
-* @method static \Pimcore\Model\DataObject\News\Listing getByImage_3 ($value, $limit = 0) 
 */
 
 class News extends Concrete {
@@ -40,7 +38,6 @@ public $localizedfields;
 public $date;
 public $image_1;
 public $image_2;
-public $image_3;
 
 
 /**
@@ -236,7 +233,7 @@ public function setImage_1 ($image_1) {
 }
 
 /**
-* Get image_2 - Image
+* Get image_2 - Teaser Bild (optional)
 * @return \Pimcore\Model\Asset\Image
 */
 public function getImage_2 () {
@@ -252,38 +249,12 @@ public function getImage_2 () {
 }
 
 /**
-* Set image_2 - Image
+* Set image_2 - Teaser Bild (optional)
 * @param \Pimcore\Model\Asset\Image $image_2
 * @return \Pimcore\Model\DataObject\News
 */
 public function setImage_2 ($image_2) {
 	$this->image_2 = $image_2;
-	return $this;
-}
-
-/**
-* Get image_3 - Image
-* @return \Pimcore\Model\Asset\Image
-*/
-public function getImage_3 () {
-	$preValue = $this->preGetValue("image_3"); 
-	if($preValue !== null && !\Pimcore::inAdmin()) { 
-		return $preValue;
-	}
-	$data = $this->image_3;
-	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
-		    return $data->getPlain();
-	}
-	return $data;
-}
-
-/**
-* Set image_3 - Image
-* @param \Pimcore\Model\Asset\Image $image_3
-* @return \Pimcore\Model\DataObject\News
-*/
-public function setImage_3 ($image_3) {
-	$this->image_3 = $image_3;
 	return $this;
 }
 
