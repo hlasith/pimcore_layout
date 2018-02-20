@@ -37,5 +37,48 @@ return [
             ]
         ],
         "id" => "facebook-box"
+    ],
+    "player1" => [
+        "items" => [
+            [
+                "code" => "<script>\nconsole.log(\"test\");\n</script>",
+                "element" => "body",
+                "position" => "end",
+                "disabled" => FALSE,
+                "enabledInEditmode" => FALSE
+            ]
+        ],
+        "name" => "player1",
+        "description" => "testing",
+        "siteId" => "default",
+        "urlPattern" => "@^/agb.html\$@",
+        "textPattern" => "",
+        "httpMethod" => "",
+        "disabled" => FALSE,
+        "params" => [
+            [
+                "name" => "",
+                "value" => ""
+            ],
+            [
+                "name" => "",
+                "value" => ""
+            ],
+            [
+                "name" => "",
+                "value" => ""
+            ],
+            [
+                "name" => "",
+                "value" => ""
+            ],
+            [
+                "name" => "",
+                "value" => ""
+            ]
+        ],
+        "modificationDate" => 1519121144,
+        "creationDate" => 1519120885,
+        "id" => "player1"
     ]
 ];

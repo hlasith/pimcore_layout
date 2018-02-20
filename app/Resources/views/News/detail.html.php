@@ -49,7 +49,8 @@ $news = $this->news;
 
         <?php } ?>
     </div>
-
-    <?= $news->getText(); ?>
+    <?php $this->glossary()->start(); ?>
+        <?= $news->getText(); ?>
+    <?php $this->glossary()->stop() ?>
 
 </section>
