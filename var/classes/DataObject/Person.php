@@ -1,14 +1,13 @@
-<?php
+<?php 
 
-/**
-* Generated at: 2016-08-09T09:00:04+02:00
+/** 
+* Generated at: 2018-02-23T16:24:27+01:00
 * Inheritance: no
 * Variants: no
 * Changed by: system (0)
-* IP: 192.168.11.111
 
 
-Fields Summary:
+Fields Summary: 
 - gender [gender]
 - firstname [firstname]
 - lastname [lastname]
@@ -16,20 +15,20 @@ Fields Summary:
 - newsletterActive [newsletterActive]
 - newsletterConfirmed [newsletterConfirmed]
 - dateRegister [datetime]
-*/
+*/ 
 
 namespace Pimcore\Model\DataObject;
 
 
 
 /**
-* @method static \Pimcore\Model\DataObject\Person\Listing getByGender ($value, $limit = 0)
-* @method static \Pimcore\Model\DataObject\Person\Listing getByFirstname ($value, $limit = 0)
-* @method static \Pimcore\Model\DataObject\Person\Listing getByLastname ($value, $limit = 0)
-* @method static \Pimcore\Model\DataObject\Person\Listing getByEmail ($value, $limit = 0)
-* @method static \Pimcore\Model\DataObject\Person\Listing getByNewsletterActive ($value, $limit = 0)
-* @method static \Pimcore\Model\DataObject\Person\Listing getByNewsletterConfirmed ($value, $limit = 0)
-* @method static \Pimcore\Model\DataObject\Person\Listing getByDateRegister ($value, $limit = 0)
+* @method static \Pimcore\Model\DataObject\Person\Listing getByGender ($value, $limit = 0) 
+* @method static \Pimcore\Model\DataObject\Person\Listing getByFirstname ($value, $limit = 0) 
+* @method static \Pimcore\Model\DataObject\Person\Listing getByLastname ($value, $limit = 0) 
+* @method static \Pimcore\Model\DataObject\Person\Listing getByEmail ($value, $limit = 0) 
+* @method static \Pimcore\Model\DataObject\Person\Listing getByNewsletterActive ($value, $limit = 0) 
+* @method static \Pimcore\Model\DataObject\Person\Listing getByNewsletterConfirmed ($value, $limit = 0) 
+* @method static \Pimcore\Model\DataObject\Person\Listing getByDateRegister ($value, $limit = 0) 
 */
 
 class Person extends Concrete {
@@ -60,11 +59,14 @@ public static function create($values = array()) {
 * @return string
 */
 public function getGender () {
-	$preValue = $this->preGetValue("gender");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("gender"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
 	$data = $this->gender;
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
+	}
 	return $data;
 }
 
@@ -83,11 +85,14 @@ public function setGender ($gender) {
 * @return string
 */
 public function getFirstname () {
-	$preValue = $this->preGetValue("firstname");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("firstname"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
 	$data = $this->firstname;
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
+	}
 	return $data;
 }
 
@@ -106,11 +111,14 @@ public function setFirstname ($firstname) {
 * @return string
 */
 public function getLastname () {
-	$preValue = $this->preGetValue("lastname");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("lastname"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
 	$data = $this->lastname;
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
+	}
 	return $data;
 }
 
@@ -129,11 +137,14 @@ public function setLastname ($lastname) {
 * @return string
 */
 public function getEmail () {
-	$preValue = $this->preGetValue("email");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("email"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
 	$data = $this->email;
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
+	}
 	return $data;
 }
 
@@ -152,11 +163,14 @@ public function setEmail ($email) {
 * @return boolean
 */
 public function getNewsletterActive () {
-	$preValue = $this->preGetValue("newsletterActive");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("newsletterActive"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
 	$data = $this->newsletterActive;
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
+	}
 	return $data;
 }
 
@@ -175,11 +189,14 @@ public function setNewsletterActive ($newsletterActive) {
 * @return boolean
 */
 public function getNewsletterConfirmed () {
-	$preValue = $this->preGetValue("newsletterConfirmed");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("newsletterConfirmed"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
 	$data = $this->newsletterConfirmed;
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
+	}
 	return $data;
 }
 
@@ -195,20 +212,23 @@ public function setNewsletterConfirmed ($newsletterConfirmed) {
 
 /**
 * Get dateRegister - dateRegister
-* @return \Pimcore\Date
+* @return \Carbon\Carbon
 */
 public function getDateRegister () {
-	$preValue = $this->preGetValue("dateRegister");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("dateRegister"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
 	$data = $this->dateRegister;
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
+	}
 	return $data;
 }
 
 /**
 * Set dateRegister - dateRegister
-* @param \Pimcore\Date $dateRegister
+* @param \Carbon\Carbon $dateRegister
 * @return \Pimcore\Model\DataObject\Person
 */
 public function setDateRegister ($dateRegister) {
@@ -219,7 +239,8 @@ public function setDateRegister ($dateRegister) {
 protected static $_relationFields = array (
 );
 
-public $lazyLoadedFields = NULL;
+public $lazyLoadedFields = array (
+);
 
 }
 

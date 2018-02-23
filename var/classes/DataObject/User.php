@@ -1,27 +1,25 @@
-<?php
+<?php 
 
-/**
-* Generated at: 2017-04-10T12:45:18+02:00
+/** 
+* Generated at: 2018-02-23T16:24:27+01:00
 * Inheritance: no
 * Variants: no
-* Changed by: admin (3)
-* IP: 192.168.85.1
 
 
-Fields Summary:
+Fields Summary: 
 - username [input]
 - password [password]
 - roles [multiselect]
-*/
+*/ 
 
 namespace Pimcore\Model\DataObject;
 
 
 
 /**
-* @method \Pimcore\Model\DataObject\User\Listing getByUsername ($value, $limit = 0)
-* @method \Pimcore\Model\DataObject\User\Listing getByPassword ($value, $limit = 0)
-* @method \Pimcore\Model\DataObject\User\Listing getByRoles ($value, $limit = 0)
+* @method static \Pimcore\Model\DataObject\User\Listing getByUsername ($value, $limit = 0) 
+* @method static \Pimcore\Model\DataObject\User\Listing getByPassword ($value, $limit = 0) 
+* @method static \Pimcore\Model\DataObject\User\Listing getByRoles ($value, $limit = 0) 
 */
 
 class User extends Concrete {
@@ -48,11 +46,14 @@ public static function create($values = array()) {
 * @return string
 */
 public function getUsername () {
-	$preValue = $this->preGetValue("username");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("username"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
 	$data = $this->username;
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
+	}
 	return $data;
 }
 
@@ -71,11 +72,14 @@ public function setUsername ($username) {
 * @return string
 */
 public function getPassword () {
-	$preValue = $this->preGetValue("password");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("password"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
 	$data = $this->password;
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
+	}
 	return $data;
 }
 
@@ -94,11 +98,14 @@ public function setPassword ($password) {
 * @return array
 */
 public function getRoles () {
-	$preValue = $this->preGetValue("roles");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("roles"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
 	$data = $this->roles;
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
+	}
 	return $data;
 }
 

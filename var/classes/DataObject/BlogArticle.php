@@ -1,13 +1,13 @@
-<?php
+<?php 
 
-/**
-* Generated at: 2016-08-09T09:00:04+02:00
+/** 
+* Generated at: 2018-02-23T16:24:26+01:00
 * Inheritance: no
 * Variants: no
-* IP: 192.168.11.111
+* Changed by: user1 (7)
 
 
-Fields Summary:
+Fields Summary: 
 - localizedfields [localizedfields]
 -- title [input]
 -- text [wysiwyg]
@@ -15,17 +15,17 @@ Fields Summary:
 - date [datetime]
 - categories [objects]
 - posterImage [hotspotimage]
-*/
+*/ 
 
 namespace Pimcore\Model\DataObject;
 
 
 
 /**
-* @method static \Pimcore\Model\DataObject\BlogArticle\Listing getByLocalizedfields ($field, $value, $locale = null, $limit = 0)
-* @method static \Pimcore\Model\DataObject\BlogArticle\Listing getByDate ($value, $limit = 0)
-* @method static \Pimcore\Model\DataObject\BlogArticle\Listing getByCategories ($value, $limit = 0)
-* @method static \Pimcore\Model\DataObject\BlogArticle\Listing getByPosterImage ($value, $limit = 0)
+* @method static \Pimcore\Model\DataObject\BlogArticle\Listing getByLocalizedfields ($field, $value, $locale = null, $limit = 0) 
+* @method static \Pimcore\Model\DataObject\BlogArticle\Listing getByDate ($value, $limit = 0) 
+* @method static \Pimcore\Model\DataObject\BlogArticle\Listing getByCategories ($value, $limit = 0) 
+* @method static \Pimcore\Model\DataObject\BlogArticle\Listing getByPosterImage ($value, $limit = 0) 
 */
 
 class BlogArticle extends Concrete {
@@ -49,15 +49,18 @@ public static function create($values = array()) {
 }
 
 /**
-* Get localizedfields -
+* Get localizedfields - 
 * @return \Pimcore\Model\DataObject\Localizedfield
 */
 public function getLocalizedfields () {
-	$preValue = $this->preGetValue("localizedfields");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("localizedfields"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
 	$data = $this->getClass()->getFieldDefinition("localizedfields")->preGetData($this);
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
+	}
 	return $data;
 }
 
@@ -67,9 +70,12 @@ public function getLocalizedfields () {
 */
 public function getTitle ($language = null) {
 	$data = $this->getLocalizedfields()->getLocalizedValue("title", $language);
-	$preValue = $this->preGetValue("title");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("title"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
+	}
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
 	}
 	 return $data;
 }
@@ -80,9 +86,12 @@ public function getTitle ($language = null) {
 */
 public function getText ($language = null) {
 	$data = $this->getLocalizedfields()->getLocalizedValue("text", $language);
-	$preValue = $this->preGetValue("text");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("text"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
+	}
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
 	}
 	 return $data;
 }
@@ -93,15 +102,18 @@ public function getText ($language = null) {
 */
 public function getTags ($language = null) {
 	$data = $this->getLocalizedfields()->getLocalizedValue("tags", $language);
-	$preValue = $this->preGetValue("tags");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("tags"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
+	}
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
 	}
 	 return $data;
 }
 
 /**
-* Set localizedfields -
+* Set localizedfields - 
 * @param \Pimcore\Model\DataObject\Localizedfield $localizedfields
 * @return \Pimcore\Model\DataObject\BlogArticle
 */
@@ -142,20 +154,23 @@ public function setTags ($tags, $language = null) {
 
 /**
 * Get date - Date
-* @return \Pimcore\Date
+* @return \Carbon\Carbon
 */
 public function getDate () {
-	$preValue = $this->preGetValue("date");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("date"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
 	$data = $this->date;
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
+	}
 	return $data;
 }
 
 /**
 * Set date - Date
-* @param \Pimcore\Date $date
+* @param \Carbon\Carbon $date
 * @return \Pimcore\Model\DataObject\BlogArticle
 */
 public function setDate ($date) {
@@ -168,11 +183,14 @@ public function setDate ($date) {
 * @return \Pimcore\Model\DataObject\blogCategory[]
 */
 public function getCategories () {
-	$preValue = $this->preGetValue("categories");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("categories"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
 	$data = $this->getClass()->getFieldDefinition("categories")->preGetData($this);
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
+	}
 	return $data;
 }
 
@@ -191,11 +209,14 @@ public function setCategories ($categories) {
 * @return \Pimcore\Model\DataObject\Data\Hotspotimage
 */
 public function getPosterImage () {
-	$preValue = $this->preGetValue("posterImage");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("posterImage"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
 	$data = $this->posterImage;
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
+	}
 	return $data;
 }
 
@@ -210,13 +231,14 @@ public function setPosterImage ($posterImage) {
 }
 
 protected static $_relationFields = array (
-  'categories' =>
+  'categories' => 
   array (
     'type' => 'objects',
   ),
 );
 
-public $lazyLoadedFields = NULL;
+public $lazyLoadedFields = array (
+);
 
 }
 

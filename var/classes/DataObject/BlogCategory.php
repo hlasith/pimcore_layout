@@ -1,23 +1,23 @@
-<?php
+<?php 
 
-/**
-* Generated at: 2016-08-09T09:00:04+02:00
+/** 
+* Generated at: 2018-02-23T16:24:26+01:00
 * Inheritance: no
 * Variants: no
-* IP: 192.168.11.111
+* Changed by: user1 (7)
 
 
-Fields Summary:
+Fields Summary: 
 - localizedfields [localizedfields]
 -- name [input]
-*/
+*/ 
 
 namespace Pimcore\Model\DataObject;
 
 
 
 /**
-* @method static \Pimcore\Model\DataObject\BlogCategory\Listing getByLocalizedfields ($field, $value, $locale = null, $limit = 0)
+* @method static \Pimcore\Model\DataObject\BlogCategory\Listing getByLocalizedfields ($field, $value, $locale = null, $limit = 0) 
 */
 
 class BlogCategory extends Concrete {
@@ -38,15 +38,18 @@ public static function create($values = array()) {
 }
 
 /**
-* Get localizedfields -
+* Get localizedfields - 
 * @return \Pimcore\Model\DataObject\Localizedfield
 */
 public function getLocalizedfields () {
-	$preValue = $this->preGetValue("localizedfields");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("localizedfields"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
 	$data = $this->getClass()->getFieldDefinition("localizedfields")->preGetData($this);
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
+	}
 	return $data;
 }
 
@@ -56,15 +59,18 @@ public function getLocalizedfields () {
 */
 public function getName ($language = null) {
 	$data = $this->getLocalizedfields()->getLocalizedValue("name", $language);
-	$preValue = $this->preGetValue("name");
-	if($preValue !== null && !\Pimcore::inAdmin()) {
+	$preValue = $this->preGetValue("name"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
+	}
+	if ($data instanceof \Pimcore\Model\DataObject\Data\EncryptedField) {
+		    return $data->getPlain();
 	}
 	 return $data;
 }
 
 /**
-* Set localizedfields -
+* Set localizedfields - 
 * @param \Pimcore\Model\DataObject\Localizedfield $localizedfields
 * @return \Pimcore\Model\DataObject\BlogCategory
 */
@@ -86,7 +92,8 @@ public function setName ($name, $language = null) {
 protected static $_relationFields = array (
 );
 
-public $lazyLoadedFields = NULL;
+public $lazyLoadedFields = array (
+);
 
 }
 

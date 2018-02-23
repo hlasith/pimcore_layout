@@ -4,6 +4,7 @@
  * @var \Pimcore\Templating\PhpEngine $view
  * @var \Pimcore\Templating\GlobalVariables $app
  */
+use Pimcore\Model\Document;
 ?>
 <!DOCTYPE html>
 <html lang="<?= $this->getLocale() ?>">
@@ -93,7 +94,8 @@ if ($this->editmode) {
     <!-- NGL PRO Main Navigation -->
     <nav class="navbar navbar-expand-md px-0 ngl-main-nav">
         <div class="container px-3 d-md-flex">
-            <a class="navbar-brand mr-0" href="#home"><img src="images/NGL-logo-green.png"></a>
+            <a class="navbar-brand mr-0" href="#home"><img 
+                    src="/static/img/9085_Borussia_MicroSite/NGL-logo-green.png"></a>
             <button class="navbar-toggler ngl-nav-toggler collapsed" type="button" data-toggle="collapse"
                     data-target="#ngl-nav-responsive" aria-controls="ngl-nav-responsive" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -109,7 +111,7 @@ if ($this->editmode) {
                     </li>
                     <li class="nav-item hidden-sm-down">
                         <a class="nav-link ngl-link-fourth" ><img id="mainNavImage"
-                                                                  src="images/borrusia-ess-logo.png"></a>
+                                                                  src="/static/img/9085_Borussia_MicroSite/borrusia-ess-logo.png"></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link ngl-link-fourth" target="_blank"
@@ -139,7 +141,7 @@ if ($this->editmode) {
     <div id="ngl-pro-carousel" class="ngl-pro-carousel" data-ride="false">
         <div class="carousel-inner">
             <div class="carousel-item ngl-bg-image active"
-                 style="background-image: url(images/motiv_zakaria_elvedi.jpg);">
+                 style="background-image: url(/static/img/9085_Borussia_MicroSite/motiv_zakaria_elvedi.jpg);">
                 <div>
                     <div class="carousel-caption d-block text-left text-center">
 
@@ -170,11 +172,11 @@ if ($this->editmode) {
                             </iframe>
                         </div>
                     </div>
-                    <img class="d-block w-100 mb-4 mt-4 mt-sm-4 pr-sm-5" src="images/clubcard2.jpg"
+                    <img class="d-block w-100 mb-4 mt-4 mt-sm-4 pr-sm-5" src="/static/img/9085_Borussia_MicroSite/clubcard2.jpg"
                          alt="Third slide">
                 </div>
                 <img class="pull-right hidden-md-down"
-                     src="images/borrusia-ess-logo2.png">
+                     src="/static/img/9085_Borussia_MicroSite/borrusia-ess-logo2.png">
                 Der VBL Qualifier Cup ist deine Chance, für Borussia Mönchengladbach an der TAG Heuer Virtuellen
                 Bundesliga
                 (VBL)
@@ -197,7 +199,7 @@ if ($this->editmode) {
                     VBL!</p>
             </div>
             <img class="pull-right hidden-lg-up" style="margin: 0 auto; max-height: 200px;"
-                 src="images/borrusia-ess-logo2.png">
+                 src="/static/img/9085_Borussia_MicroSite/borrusia-ess-logo2.png">
             <div class="col-12 col-sm-12 sectionBottom mt-sm-5">
                 Melde dich gleich an und sichere dir einen Startplatz bei den
                 VBL Qualifier für die VBL Playoffs
@@ -230,7 +232,7 @@ if ($this->editmode) {
 </section>
 
 <section class="ngl-section-dark">
-    <div><img style="width: 100%;" src="images/footerNgl.jpg"></div>
+    <div><img style="width: 100%;" src="/static/img/9085_Borussia_MicroSite/footerNgl.jpg"></div>
 </section>
 
 <section class="ngl-section-dark py-4">
@@ -238,9 +240,9 @@ if ($this->editmode) {
         <div class="row ngl-partner-images">
 
             <div id="ngl-partner-image-conainer">
-                <a href="https://www.borussia.de/de/startseite.html" target="_blank"><img src="images/borussiaLink.png"
+                <a href="https://www.borussia.de/de/startseite.html" target="_blank"><img src="/static/img/9085_Borussia_MicroSite/borussiaLink.png"
                                                                                           class="img-fluid"></a>
-                <a href="https://www.ngl.one/" target="_blank"><img src="images/NglOneLink.png"
+                <a href="https://www.ngl.one/" target="_blank"><img src="/static/img/9085_Borussia_MicroSite/NglOneLink.png"
                                                                     class="img-fluid"></a>
             </div>
 
