@@ -88,6 +88,13 @@
   #content a {
     color:$ngl-color-theme;
     font-weight: bold;
+
+    &.ngl-btn-primary {
+      color: $ngl-color-dark-blue;
+      &:hover {
+        color: $ngl-color-white;
+      }
+    }
   }
 
   .img-thumbnail img, .thumbnail img {

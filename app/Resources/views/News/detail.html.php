@@ -14,6 +14,7 @@ $this->extend('layout.html.php');
 $this->headTitle()->set($this->news->getPageTitle());
 $this->headMeta()->setDescription($this->news->getShortText(), 160);
 
+
 /** @var \Pimcore\Model\DataObject\News $news */
 $news = $this->news;
 ?>
@@ -52,5 +53,13 @@ $news = $this->news;
     <?php $this->glossary()->start(); ?>
         <?= $news->getText(); ?>
     <?php $this->glossary()->stop() ?>
+
+    <a class="ngl-btn-primary font-weight-bold rounded text-uppercase mt-3 mb-3" href="/">ZUR NGL HOME</a>
+    <?php $cache = $this->cache("test_cache_key", 60); ?>
+    <?php if (!$cache->start()): ?>
+        <h1>This is some cached microtime</h1>
+        <?= microtime() ?>
+        <?php $cache->end(); ?>
+    <?php endif ?>
 
 </section>
