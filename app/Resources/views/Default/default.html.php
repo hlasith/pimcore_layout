@@ -64,7 +64,7 @@ echo $this->headMeta();
 <!-- Le styles -->
 <?php
 // we use the view helper here to have the cache buster functionality
-$this->headLink()->appendStylesheet('/static/css/ngl_pro_main.css');
+$this->headLink()->appendStylesheet('/static/css/9085_main.css');
 ?>
 
 

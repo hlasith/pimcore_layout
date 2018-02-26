@@ -1,0 +1,320 @@
+// ngl utilities
+// inner content specific styles (sizing, spacing, position etc.)
+
+//NGL Font colors
+.ngl-font-theme {
+  color: $ngl-color-theme;
+}
+.ngl-font-gold {
+ color: $ngl-font-gold-color;
+}
+.ngl-font-black {
+  color: $ngl-font-black-color;
+}
+.ngl-font-grey {
+  color: $ngl-font-grey-color;
+}
+.ngl-font-positive {
+  color: $ngl-font-positive-color;
+}
+.ngl-font-darkwhite {
+  color: $ngl-color-dark-white;
+}
+.ngl-border-primary {
+  border-color: $ngl-border-color-primary !important;
+}
+.ngl-border-secondary {
+  border-color: $ngl-border-color-secondary !important;
+}
+//NGL Link Settings
+.ngl-link-primary {
+  color: $ngl-color-theme !important;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.active {
+    color: $ngl-font-grey-color !important;
+    text-decoration: none;
+  }
+}
+.ngl-link-secondary {
+  color: $ngl-font-primary-color !important;
+  display: block;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.active {
+    color: $ngl-color-theme !important;
+    text-decoration: none;
+  }
+}
+.ngl-link-third {
+  color: $ngl-font-grey-color;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.active {
+    color: $ngl-color-theme;
+    text-decoration: none;
+  }
+}
+.ngl-link-fourth {
+  color: $ngl-color-dark-green !important;
+  font-weight: 700;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.active {
+    color: $ngl-font-gold-color !important;
+    text-decoration: none;
+  }
+}
+.ngl-icon-fix {
+  overflow: hidden;
+  height: 22px;
+  display: table-caption;
+}
+.ngl-icon-link {
+  @extend .ngl-icon-fix;
+
+  i {
+    color: $ngl-nav-color !important;
+  }
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.active {
+
+    i {
+      color: $ngl-color-theme !important;
+    }
+  }
+}
+
+//NGL Buttons
+.ngl-btn-primary {
+  background: $ngl-color-theme;
+  color: $ngl-font-blue-color;
+  border: 1px solid transparent;
+  padding: 8px 10px;
+  display: inline-block;
+  font-family: $ngl-font-medium;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.active {
+    color: $ngl-font-primary-color;
+  }
+}
+.ngl-btn-secondary {
+  border: 1px solid $ngl-border-color-secondary;
+  padding: 8px 10px;
+  font-family: $ngl-font-medium;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.active {
+    color: $ngl-font-primary-color;
+    border: 1px solid $ngl-font-primary-color;
+  }
+}
+
+.ngl-btn-third {
+  background: $ngl-color-gold;
+  color: $ngl-font-black-color;
+  padding: 8px 10px;
+  display: inline-block;
+  font-family: $ngl-font-medium;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.active {
+    color: $ngl-font-primary-color;
+  }
+}
+
+//NGL Components
+.ngl-dropdown {
+  .dropdown-toggle:after {
+    color: $ngl-color-theme;
+  }
+  .dropdown-menu {
+    left: auto;
+    right: 0;
+  }
+  .ngl-icon-link:after {
+    top: 10px;
+    position: absolute;
+  }
+  &.show {
+    > a {
+      &:after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        vertical-align: .255em;
+        content: "";
+        border-top: 0;
+        border-right: .3em solid transparent;
+        border-bottom: .3em solid;
+        border-left: .3em solid transparent;
+      }
+    }
+  }
+}
+
+.ngl-card {
+  background: $ngl-content-bg;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.ngl-score-display {
+  color: $ngl-font-primary-color;
+  display: inline-flex;
+  min-height: 28px;
+
+  h4 {
+    font-size: 25px;
+  }
+  &.ngl-score-display-small {
+    display: inline-block;
+    padding: .15em .4em;
+  }
+  @for $index from 1 through 6 {
+    h#{$index} {
+      width: 100%;
+      margin: 0;
+
+      .ngl-score {
+        float: left;
+      }
+      span {
+        width: 6%;
+        display: block;
+        float: left;
+      }
+    }
+  }
+  h2 {
+    padding: 6px 0;
+  }
+  h5 {
+    padding-top: 3px;
+  }
+}
+
+.ngl-yellow-card {
+  background: $ngl-color-gold;
+  border: 1px solid $ngl-border-color-primary;
+  border-radius: 5px;
+  padding: 4px;
+  height: 25px;
+  width: 16px;
+  margin: 0 auto;
+}
+
+.ngl-red-card {
+  @extend .ngl-yellow-card;
+  background: $ngl-color-red;
+}
+
+.ngl-first-wreath {
+  background-image: url(../images/webapp/first_three_decoration_first.svg);
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  padding-bottom: 50px;
+}
+.ngl-second-wreath {
+  @extend .ngl-first-wreath;
+  background-image: url(../images/webapp/first_three_decoration_second.svg);
+}
+.ngl-third-wreath {
+  @extend .ngl-first-wreath;
+  background-image: url(../images/webapp/first_three_decoration_third.svg);
+}
+
+.ngl-user-pos-left {
+  width: 40px;
+  height: 0;
+  border-style: solid;
+  border-width: 25px 1vw 0px 25px;
+  border-color: $ngl-content-bg transparent transparent $ngl-content-bg;
+  position: relative;
+
+  span {
+    position: absolute;
+    top: -25px;
+    left: -20px;
+  }
+}
+.ngl-user-pos-right {
+  width: 40px;
+  height: 0;
+  border-style: solid;
+  border-width: 0px 25px 25px 1vw;
+  border-color: transparent $ngl-content-bg $ngl-content-bg transparent;
+  position: relative;
+
+  span {
+    right: -20px;
+    position: absolute;
+  }
+}
+.ngl-edit-nav {
+  background: $ngl-edit-bg;
+}
+.ngl-bg-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+.ngl-partner-images {
+  img {
+    max-height: 115px;
+  }
+}
+.ngl-slider-overlay {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(13, 20, 31, 0.25) 44%, rgba(17, 25, 40, 0.25) 64%, $ngl-content-bg);
+  width: 100%;
+}
+.ngl-formation-display {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &.ngl-formation-top {
+    background-image: url('../images/proclub/spielfeld_halb_oben.png');
+  }
+  &.ngl-formation-bottom {
+    background-image: url('../images/proclub/spielfeld_halb_unten.png');
+  }
+}
+.ngl-goal-table {
+  th, td {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+  }
+}
+
+/* ngl edit overwrite */
+body {
+  &.ngl-pro-edit {
+    .ngl-btn-secondary {
+      &:hover {
+        background: $ngl-color-theme;
+        border-color: $ngl-color-theme;
+      }
+    }
+  }
+}
+

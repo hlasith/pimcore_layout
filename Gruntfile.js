@@ -24,24 +24,13 @@ module.exports = function (grunt) {
         clean: {
             first: [
                 "web/static/css/ngl_pro_main*.css",
+                "web/static/css/9085*.css",
                 "web/static/js/*-min.js"
             ],
             // we need a second part to get rid of the temp template files
             second: [
                 "web/static/js/temp"
             ],
-            // tmp: [
-            //     "tmp*"
-            // ],
-            // webhtml: [
-            //     "web/static/*.html"
-            // ],
-            // tmpRevisionedCss: [
-            //     "web/static/css/styles.*.css"
-            // ],
-            // stylesCss: [
-            //     "web/static/css/ngl_pro_main.css"
-            // ]
         },
 
         /**********************************************************************************************************/
@@ -78,7 +67,8 @@ module.exports = function (grunt) {
         watch: {
             sass: {
                 files: [
-                       '<%= directory.assets %>/scss/*.scss'
+                       '<%= directory.assets %>/scss/*.scss',
+                       '<%= directory.assets %>/scss/9085_Borussia_MicroSite/*.scss'
 
                 ],
                 tasks: ['sass']
@@ -133,6 +123,7 @@ module.exports = function (grunt) {
             simple_concat: {
                 files: {
                     'web/static/css/ngl_pro_main.css': ['web/static/css/ngl_pro_main.css'],
+                    'web/static/css/9085_main.css': ['web/static/css/9085_main.css'],
                 }
             }
         },
@@ -173,43 +164,11 @@ module.exports = function (grunt) {
                     sourceMap: false
                 },
                 files: {
-                    '<%= directory.web %>/css/ngl_pro_main.css': 'assets/scss/ngl_pro_main.scss'
+                    '<%= directory.web %>/css/ngl_pro_main.css': 'assets/scss/ngl_pro_main.scss',
+                    '<%= directory.web %>/css/9085_main.css': 'assets/scss/9085_Borussia_MicroSite/9085_main.scss'
                 }
             }
         },
-
-        processhtml: {
-            production: {
-                options: {
-                    data: {
-                        bootstrapperUrl: 'https://cdn.ngl.one/bootstrapper/qPse5ZBoa0NpkJ3OKWHy67GlyDAa.min.js',
-                        registerUrl: 'https://www.ngl.one/ess-authentication-mvc-application/registration?client_id=qPse5ZBoa0NpkJ3OKWHy67GlyDAa&redirect_uri=https://www.ngl.one/tournament.html&state=eyJoYXNocm91dGVyIjoiIiwidHlwZSI6InJlZGlyZWN0In0=',
-                        piwikHostname: 'tracking.ngl.one',
-                        piwikSiteId: 1,
-                        piwikJsFilepath: 'piwik.48028d63564a63e6ec32782aa54d30c5.js',
-                        bootstrapUrlStartPart: 'https://cdn.ngl.one'
-
-
-
-                    }
-                },
-            },
-            testing: {
-                options: {
-                    data: {
-                        bootstrapperUrl: 'https://cdn-ngl-new.test.vitaweb.de/bootstrapper/57HUAFHMJ7aUomZwoUABAisbTIQa.min.js',
-                        registerUrl: 'https://ngl-new.test.vitaweb.de/ess-authentication-mvc-application/registration?redirect_uri=https://ngl-new.test.vitaweb.de&response_type=code&scope=openid&client_id=57HUAFHMJ7aUomZwoUABAisbTIQa&state=eyJob3N0VXJsIjoiIiwiaGFzaHJvdXRlciI6IiMiLCJ0eXBlIjoicmVkaXJlY3QifQ==',
-                        piwikHostname: 'tracking-new.test.vitaweb.de',
-                        piwikSiteId: 1,
-                        piwikJsFilepath: 'piwik.48028d63564a63e6ec32782aa54d30c5.js',
-                        bootstrapUrlStartPart: 'https://cdn-ngl-test.vitaweb.de',
-
-                    }
-                },
-            }
-        },
-
-
 
     });
 
