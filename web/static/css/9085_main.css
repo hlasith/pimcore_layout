@@ -8522,7 +8522,7 @@ body {
       padding-right: 6px; }
     body .thumbnail .caption h5 {
       font-weight: bold;
-      background: url("../images/newsBullet.png") no-repeat;
+      background: url("../img/9085_Borussia_MicroSite/newsBullet.png") no-repeat;
       min-height: 44px;
       padding-left: 54px;
       padding-top: 2px;
@@ -8558,7 +8558,7 @@ body {
       margin-top: -40px; } }
   @media (min-width: 1145px) {
     body #theNgl {
-      background: url(../images/Ngl-app-background3.jpg) repeat-y;
+      background: url(../img/9085_Borussia_MicroSite/Ngl-app-background3.jpg) repeat-y;
       background-size: 100%; } }
   @media (max-width: 768px) {
     body .ngl-main-nav .ngl-link-fourth {

@@ -52,6 +52,11 @@ class ContentController extends FrontendController
         $this->view->isPortal = true;
     }
 
+    public function default9085Action()
+    {
+
+    }
+
     public function thumbnailsAction()
     {
     }

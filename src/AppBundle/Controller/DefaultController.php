@@ -17,4 +17,12 @@ class DefaultController extends FrontendController
       
         $this->view->isPortal = true;
     }
+
+    public function borussiaAction(Request $request)
+    {
+        // you can also set the header via code
+        $this->addResponseHeader('X-Custom-Header3', ['foo', 'bar']);
+
+        $this->view->isPortal = true;
+    }
 }
