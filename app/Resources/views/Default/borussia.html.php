@@ -219,7 +219,7 @@ if ($this->editmode) {
 
 <?php
 // include a document-snippet - in this case the footer document
-echo $this->inc('/9085_Borussia_MicroSite/Start/shared/includes/footer');
+echo $this->inc('/9085_Borussia_MicroSite/de/shared/includes/footer');
 
 $this->headScript()->appendFile('/vendor/requirejs/require.js');
 $this->headScript()->appendFile('/static/js/main.js');

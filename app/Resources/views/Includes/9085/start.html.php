@@ -94,8 +94,6 @@
             <!--            <script src="https://cdn-ngl-one.centos.vagrant/bootstrapper/Zj8fzf703llEcknH3qRnJjDpRo4a.min.js"-->
             <!--                    crossorigin="anonymous"></script>-->
             <!-- /build -->
-
-
         </div>
     </div>
 </section>
