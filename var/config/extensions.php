@@ -20,5 +20,8 @@ return [
         "icon-teaser-row" => TRUE,
         "tabbed-slider-text" => TRUE,
         "wysiwyg-with-images" => TRUE
+    ],
+    "bundle" => [
+        "nglBorussiaBundle\\nglBorussiaBundle" => TRUE
     ]
 ];

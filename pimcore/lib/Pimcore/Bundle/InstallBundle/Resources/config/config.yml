@@ -11,18 +11,10 @@ twig:
     strict_variables: '%kernel.debug%'
 
 monolog:
+    channels: ['pimcore']
     handlers:
         main:
             type: stream
             path: "%kernel.logs_dir%/%kernel.environment%.log"
             level: debug
             channels: ["!event"]
-        console:
-            type:   console
-            level: debug
-            channels: ["!event"]
-            process_psr_3_messages: false
-            # make sure we show all logs on the console
-            # see https://symfony.com/blog/new-in-symfony-2-4-show-logs-in-console
-            verbosity_levels:
-                VERBOSITY_NORMAL: DEBUG
