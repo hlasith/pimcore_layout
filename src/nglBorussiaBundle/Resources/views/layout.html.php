@@ -113,7 +113,7 @@ use Pimcore\Model\Document;
     <nav class="navbar navbar-expand-md px-0 ngl-main-nav">
         <div class="container px-3 d-md-flex">
             <a class="navbar-brand mr-0" href="<?= $mainNavStartNode; ?>"><img
-                    src="/static/img/9085_Borussia_MicroSite/NGL-logo-green.png"></a>
+                    src="/bundles/nglborussia/images/NGL-logo-green.png"></a>
             <button class="navbar-toggler ngl-nav-toggler collapsed" type="button" data-toggle="collapse"
                     data-target="#ngl-nav-responsive" aria-controls="ngl-nav-responsive" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -136,11 +136,11 @@ use Pimcore\Model\Document;
                     </li>
                     <li class="nav-item hidden-sm-down">
                         <a class="nav-link ngl-link-fourth" ><img id="mainNavImage"
-                                                                  src="/static/img/9085_Borussia_MicroSite/borrusia-ess-logo.png"></a>
+                                                                  src="/bundles/nglborussia/images/borrusia-ess-logo.png"></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link ngl-link-fourth" target="_blank"
-                           href="http://virtuelle.bundesliga.de/start/">Über
+                           href="http://virtuelle.bundesliga.de/start/">Ã¼ber
                             VBL</a>
                     </li>
 
@@ -179,7 +179,7 @@ use Pimcore\Model\Document;
 
 </header>
 <?php if ($isPortal): ?>
-<?= $this->template('Includes/9085/start.html.php') ?>
+<?= $this->template('src/Resources/views/Includes/start.html.php') ?>
 <?php endif; ?>
 <?php if (!$isPortal): ?>
 

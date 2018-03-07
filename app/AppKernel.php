@@ -24,6 +24,10 @@ class AppKernel extends Kernel
      */
     public function registerBundlesToCollection(BundleCollection $collection)
     {
+        if (class_exists('\\ngl\\eintrachtBundle\\ngleintrachtBundle')) {
+            $collection->addBundle(new \ngl\eintrachtBundle\ngleintrachtBundle);
+        }
+
         if (class_exists('\\nglBorussiaBundle\\nglBorussiaBundle')) {
             $collection->addBundle(new \nglBorussiaBundle\nglBorussiaBundle);
         }
@@ -31,6 +35,8 @@ class AppKernel extends Kernel
         if (class_exists('\\AppBundle\\AppBundle')) {
             $collection->addBundle(new \AppBundle\AppBundle);
         }
+
+
 
         if (class_exists('\Pimcore\Bundle\LegacyBundle\PimcoreLegacyBundle')) {
             $collection->addBundle(new \Pimcore\Bundle\LegacyBundle\PimcoreLegacyBundle);
