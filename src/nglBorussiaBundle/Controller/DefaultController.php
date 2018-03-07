@@ -14,6 +14,9 @@ class DefaultController extends FrontendController
      */
     public function indexAction(Request $request)
     {
-        return new Response('Hello world from ngl_borussia');
+        // you can also set the header via code
+        $this->addResponseHeader('X-Custom-Header3', ['foo', 'bar']);
+
+        $this->view->isPortal = true;
     }
 }
