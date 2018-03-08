@@ -24,9 +24,11 @@ class AppKernel extends Kernel
      */
     public function registerBundlesToCollection(BundleCollection $collection)
     {
-        if (class_exists('\\ngl\\eintrachtBundle\\ngleintrachtBundle')) {
-            $collection->addBundle(new \ngl\eintrachtBundle\ngleintrachtBundle);
-        }
+
+
+
+//            $collection->addBundle(new ngl\eintrachtBundle\ngleintrachtBundle);
+
 
         if (class_exists('\\nglBorussiaBundle\\nglBorussiaBundle')) {
             $collection->addBundle(new \nglBorussiaBundle\nglBorussiaBundle);
@@ -44,4 +46,16 @@ class AppKernel extends Kernel
 		
 		
     }
+
+//    public function registerBundles()
+//    {
+//        $bundles = array(
+//            // Dependencies
+//            new Presta\SitemapBundle\PrestaSitemapBundle(),
+//        );
+//
+//        return $bundles;
+//    }
+
+   
 }

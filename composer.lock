@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "929d3979743a66de2bf3d90b75ef3c2b",
+    "content-hash": "033a478ec5deeef783b526b7a326b4c0",
     "packages": [
         {
             "name": "amnuts/opcache-gui",
@@ -2647,6 +2647,16 @@
             "time": "2018-02-28T09:22:05+00:00"
         },
         {
+            "name": "ngl/eintrachtBundle",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hlasith/ngleintrachtBundle.git",
+                "reference": "master"
+            },
+            "type": "library"
+        },
+        {
             "name": "ocramius/package-versions",
             "version": "1.3.0",
             "source": {
@@ -3046,16 +3056,16 @@
         },
         {
             "name": "piwik/device-detector",
-            "version": "3.9.2",
+            "version": "3.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/matomo-org/device-detector.git",
-                "reference": "2c69fc7a73df8e78ba712771dc43b58a637d5395"
+                "reference": "d2769e8b6e983cf31666a0f5b921ef1c8564cfb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/matomo-org/device-detector/zipball/2c69fc7a73df8e78ba712771dc43b58a637d5395",
-                "reference": "2c69fc7a73df8e78ba712771dc43b58a637d5395",
+                "url": "https://api.github.com/repos/matomo-org/device-detector/zipball/d2769e8b6e983cf31666a0f5b921ef1c8564cfb1",
+                "reference": "d2769e8b6e983cf31666a0f5b921ef1c8564cfb1",
                 "shasum": ""
             },
             "require": {
@@ -3096,29 +3106,36 @@
                 "parser",
                 "useragent"
             ],
-            "time": "2018-02-04T18:36:27+00:00"
+            "time": "2018-03-05T12:45:57+00:00"
         },
         {
             "name": "presta/sitemap-bundle",
-            "version": "v1.5.2",
+            "version": "v1.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/prestaconcept/PrestaSitemapBundle.git",
-                "reference": "489cdf6604524f5ef02f6c7d24a276c7018b0cb8"
+                "reference": "16a2c0eae7320e3647013e48026a6a6bd14f75df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/prestaconcept/PrestaSitemapBundle/zipball/489cdf6604524f5ef02f6c7d24a276c7018b0cb8",
-                "reference": "489cdf6604524f5ef02f6c7d24a276c7018b0cb8",
+                "url": "https://api.github.com/repos/prestaconcept/PrestaSitemapBundle/zipball/16a2c0eae7320e3647013e48026a6a6bd14f75df",
+                "reference": "16a2c0eae7320e3647013e48026a6a6bd14f75df",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
-                "symfony/symfony": "~2.2|~3.0"
+                "symfony/console": "~2.2|~3.0|~4.0",
+                "symfony/framework-bundle": "~2.2|~3.0|~4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.*",
-                "symfony/phpunit-bridge": "~2.7|~3.0"
+                "doctrine/annotations": "~1.0",
+                "phpunit/phpunit": "5.*",
+                "symfony/browser-kit": "~2.2|~3.0|~4.0",
+                "symfony/form": "~2.2|~3.0|~4.0",
+                "symfony/phpunit-bridge": "~2.7|~3.0|~4.0",
+                "symfony/security-bundle": "~2.2|~3.0|~4.0",
+                "symfony/translation": "~2.2|~3.0|~4.0",
+                "symfony/validator": "~2.2|~3.0|~4.0"
             },
             "suggest": {
                 "doctrine/doctrine-cache-bundle": "Allows to store sitemaps in cache"
@@ -3140,25 +3157,19 @@
             ],
             "authors": [
                 {
-                    "name": "David Epely",
-                    "homepage": "http://www.prestaconcept.net/",
-                    "role": "Initial developer"
-                },
-                {
-                    "name": "Alain Flaus",
-                    "homepage": "http://www.prestaconcept.net/",
-                    "role": "Maintainer, Developer"
+                    "name": "Prestaconcept",
+                    "homepage": "http://www.prestaconcept.net/"
                 }
             ],
-            "description": "A symfony 2 bundle that provides tools to build your application sitemap.",
+            "description": "A Symfony bundle that provides tools to build your application sitemap.",
             "keywords": [
                 "Sitemap",
-                "Symfony2",
                 "bundle",
                 "prestaconcept",
+                "symfony",
                 "xml"
             ],
-            "time": "2017-08-07T08:53:26+00:00"
+            "time": "2018-02-20T11:33:33+00:00"
         },
         {
             "name": "psr/cache",
@@ -3403,16 +3414,16 @@
         },
         {
             "name": "psr/simple-cache",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/simple-cache.git",
-                "reference": "753fa598e8f3b9966c886fe13f370baa45ef0e24"
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/753fa598e8f3b9966c886fe13f370baa45ef0e24",
-                "reference": "753fa598e8f3b9966c886fe13f370baa45ef0e24",
+                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
                 "shasum": ""
             },
             "require": {
@@ -3447,7 +3458,7 @@
                 "psr-16",
                 "simple-cache"
             ],
-            "time": "2017-01-02T13:31:39+00:00"
+            "time": "2017-10-23T01:57:42+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -4383,16 +4394,16 @@
         },
         {
             "name": "symfony/monolog-bundle",
-            "version": "v3.1.2",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/monolog-bundle.git",
-                "reference": "2b41b8b6d2c6edb1a5494f02f8e4129be2a44784"
+                "reference": "8781649349fe418d51d194f8c9d212c0b97c40dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/2b41b8b6d2c6edb1a5494f02f8e4129be2a44784",
-                "reference": "2b41b8b6d2c6edb1a5494f02f8e4129be2a44784",
+                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/8781649349fe418d51d194f8c9d212c0b97c40dd",
+                "reference": "8781649349fe418d51d194f8c9d212c0b97c40dd",
                 "shasum": ""
             },
             "require": {
@@ -4442,7 +4453,7 @@
                 "log",
                 "logging"
             ],
-            "time": "2017-11-06T16:02:17+00:00"
+            "time": "2018-03-05T14:51:36+00:00"
         },
         {
             "name": "symfony/polyfill-apcu",
@@ -4845,16 +4856,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v3.4.5",
+            "version": "v3.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "8a023e125a68c0bce08d2a8c72d67e07f0d74cab"
+                "reference": "874d4d659774d7bab90538072c83ed532dd17dc5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/8a023e125a68c0bce08d2a8c72d67e07f0d74cab",
-                "reference": "8a023e125a68c0bce08d2a8c72d67e07f0d74cab",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/874d4d659774d7bab90538072c83ed532dd17dc5",
+                "reference": "874d4d659774d7bab90538072c83ed532dd17dc5",
                 "shasum": ""
             },
             "require": {
@@ -4995,7 +5006,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2018-03-01T19:24:09+00:00"
+            "time": "2018-03-05T20:02:01+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -5102,16 +5113,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.4.4",
+            "version": "v2.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "eddb97148ad779f27e670e1e3f19fb323aedafeb"
+                "reference": "d2117ec118c1ff3d28ccddca8212d82787a4809f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/eddb97148ad779f27e670e1e3f19fb323aedafeb",
-                "reference": "eddb97148ad779f27e670e1e3f19fb323aedafeb",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/d2117ec118c1ff3d28ccddca8212d82787a4809f",
+                "reference": "d2117ec118c1ff3d28ccddca8212d82787a4809f",
                 "shasum": ""
             },
             "require": {
@@ -5164,7 +5175,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-09-27T18:10:31+00:00"
+            "time": "2018-03-03T16:23:01+00:00"
         },
         {
             "name": "vrana/adminer",
