@@ -52,5 +52,18 @@ return [
         "inheritable" => TRUE,
         "creationDate" => 1482501247,
         "modificationDate" => 1482501278
+    ],
+    6 => [
+        "id" => 6,
+        "name" => "NglBorussiaStartNode",
+        "description" => NULL,
+        "key" => "91",
+        "type" => "text",
+        "data" => NULL,
+        "config" => NULL,
+        "ctype" => "document",
+        "inheritable" => FALSE,
+        "creationDate" => 1520614695,
+        "modificationDate" => 1520614752
     ]
 ];
