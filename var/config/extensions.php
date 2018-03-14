@@ -22,6 +22,7 @@ return [
         "wysiwyg-with-images" => TRUE
     ],
     "bundle" => [
-     
+        "Ngl\\BorussiaBundle\\NglBorussiaBundle" => FALSE,
+        "Ngl\\HomeBundle\\NglHomeBundle" => TRUE
     ]
 ];

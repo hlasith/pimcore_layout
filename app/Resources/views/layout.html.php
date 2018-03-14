@@ -185,11 +185,11 @@ use Pimcore\Model\Document\Page;
 
 </header>
 <?php if ($isPortal): ?>
-    <?= $this->template('Includes/ngl-pro-carousel.html.php', ["environmentObject" => $environmentObject]) ?>
+    <?= $this->template('NglHomeBundle:Includes:ngl-pro-carousel.html.php', ["environmentObject" => $environmentObject]) ?>
     <div id="theNgl"></div>
     <?php $this->slots()->output('_content'); ?>
-    <?= $this->template('Includes/the-ngl-branding.html.php',["environmentObject" => $environmentObject]) ?>
-    <?= $this->template('Includes/the-ngl-news.html.php') ?>
+    <?= $this->template('NglHomeBundle:Includes:the-ngl-branding.html.php',["environmentObject" => $environmentObject]) ?>
+    <?= $this->template('NglHomeBundle:Includes:the-ngl-news.html.php') ?>
 <?php endif; ?>
 
 
@@ -237,8 +237,8 @@ use Pimcore\Model\Document\Page;
 // include a document-snippet - in this case the footer document
 echo $this->inc('/' . $this->getLocale() . '/shared/includes/footer');
 
-$this->headScript()->appendFile('/vendor/requirejs/require.js');
-$this->headScript()->appendFile('/static/js/main.js');
+$this->headScript()->appendFile('/bundles/nglhome/vendor/requirejs/require.js');
+$this->headScript()->appendFile('/bundles/nglhome/js/main.js');
 echo $this->headScript();
 ?>
 
