@@ -22,6 +22,6 @@ return [
         "wysiwyg-with-images" => TRUE
     ],
     "bundle" => [
-        "nglBorussiaBundle\\nglBorussiaBundle" => TRUE
+     
     ]
 ];

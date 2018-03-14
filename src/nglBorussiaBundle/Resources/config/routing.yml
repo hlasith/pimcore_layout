@@ -1,3 +1,0 @@
-ngl_borussia_homepage:
-    path:     /
-    defaults: { _controller: nglBorussiaBundle:Default:index }

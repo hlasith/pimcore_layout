@@ -1,5 +1,0 @@
-ngl_borussia:
-    resource: "@nglBorussiaBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
