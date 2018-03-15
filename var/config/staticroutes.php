@@ -24,7 +24,7 @@ return [
         "name" => "blog",
         "pattern" => "/(.*)_b([\\d]+)/",
         "reverse" => "%prefix/%text_b%id",
-        "module" => "NglHomeBundle",
+        "module" => NULL,
         "controller" => "blog",
         "action" => "detail",
         "variables" => "text,id",
@@ -35,14 +35,14 @@ return [
         "priority" => 1,
         "legacy" => FALSE,
         "creationDate" => 1388391249,
-        "modificationDate" => 1521114638
+        "modificationDate" => 1521117762
     ],
     3 => [
         "id" => 3,
         "name" => "category-example",
         "pattern" => "@/category\\-example@",
         "reverse" => "/en/category-example",
-        "module" => "NglHomeBundle",
+        "module" => NULL,
         "controller" => "Category\\Example",
         "action" => "test",
         "variables" => "",
@@ -53,14 +53,14 @@ return [
         "priority" => 1,
         "legacy" => FALSE,
         "creationDate" => 1419933908,
-        "modificationDate" => 1521114635
+        "modificationDate" => 1521117766
     ],
     4 => [
         "id" => 4,
         "name" => "demo_login",
         "pattern" => "@^/(de|en)/secure/login\$@",
         "reverse" => "/%_locale/secure/login",
-        "module" => "NglHomeBundle",
+        "module" => NULL,
         "controller" => "Secure",
         "action" => "login",
         "variables" => "_locale",
@@ -71,14 +71,14 @@ return [
         "priority" => 0,
         "legacy" => FALSE,
         "creationDate" => 1490874634,
-        "modificationDate" => 1521114611
+        "modificationDate" => 1521117769
     ],
     5 => [
         "id" => 5,
         "name" => "demo_logout",
         "pattern" => "@^/(de|en)/secure/logout\$@",
         "reverse" => "/%_locale/secure/logout",
-        "module" => "NglHomeBundle",
+        "module" => NULL,
         "controller" => "Secure",
         "action" => "logout",
         "variables" => "_locale",
@@ -89,7 +89,7 @@ return [
         "priority" => 0,
         "legacy" => FALSE,
         "creationDate" => 1490874774,
-        "modificationDate" => 1521114620
+        "modificationDate" => 1521117772
     ],
     6 => [
         "id" => 6,
