@@ -20,8 +20,6 @@ use Pimcore\Model\Document\Page;
     // portal detection => portal needs an adapted version of the layout
     $isPortal = $this->isPortal ?: false;
 
-    $isTournament = $this->isTournament ?: false;
-    
     /** @var Document|Page $document */
     $document = $this->document;
 
@@ -48,34 +46,21 @@ use Pimcore\Model\Document\Page;
         $this->headMeta()->setDescription($document->getDescription());
     }
 
-    $this->headTitle()->append("National Gaming League");
+    $this->headTitle()->append("pimcore Demo");
     $this->headTitle()->setSeparator(" : ");
 
     echo $this->headTitle();
 
-    // setting open graph tags
-//    $this->headMeta()->setProperty('og:title', 'my article title');
-    //    $this->headMeta()->setProperty('og:type', 'article');
-
     echo $this->headMeta();
-
     ?>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.ngl.one/fonts/ngl-iconfont.css" media="screen" rel="stylesheet" type="text/css">
-    <link href="https://cdn.ngl.one/fonts/Titillium_Web.css" media="screen" rel="stylesheet" type="text/css">
-    <link href="https://cdn.ngl.one/fonts/Roboto.css" media="screen" rel="stylesheet" type="text/css">
-    <link href="https://cdn.ngl.one/fonts/font-awesome.css" media="screen" rel="stylesheet" type="text/css">
+
     <!-- Le styles -->
     <?php
     // we use the view helper here to have the cache buster functionality
-    $this->headLink()->appendStylesheet('/static/css/ngl_pro_main.css');
-    ?>
-
-
-
-    <?php
-
+    $this->headLink()->appendStylesheet('/static/bootstrap/css/bootstrap.css');
+    $this->headLink()->appendStylesheet('/static/css/global.css');
     $this->headLink()->appendStylesheet('/static/lib/video-js/video-js.min.css', "screen");
     $this->headLink()->appendStylesheet('/static/lib/magnific/magnific.css', "screen");
     $this->headLink()->appendStylesheet('/static/css/print.css', "print");
@@ -88,123 +73,67 @@ use Pimcore\Model\Document\Page;
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <!--<script src="/static/js/html5shiv.js"></script>-->
-    <!--<script src="/static/js/respond.min.js"></script>-->
+    <script src="/static/js/html5shiv.js"></script>
+    <script src="/static/js/respond.min.js"></script>
     <![endif]-->
-    <script>window.Tether = {};</script>
 </head>
 
-<body id="ngl-pro" class="<?= $isPortal ? "ngl-pro-home" : 'ngl-pro-edit' ?> <?= $isTournament ? "tournament" : '' ?>">
+<body class="<?= $isPortal ? "portal-page" : '' ?>">
 
-<header class="fixed-top">
+<div class="navbar-wrapper">
+
     <?php
-//    if(\Pimcore\Model\Site::isSiteRequest()) {
-//        $site = \Pimcore\Model\Site::getCurrentSite();
-//        $mainNavStartNode = $site->getRootDocument();
-//    } else {
-//        $mainNavStartNode = \Pimcore\Model\Document::getById(1);
-//    }
-
     $mainNavStartNode = $document->getProperty('mainNavStartNode');
-    $environmentObject = $document->getProperty('environmentVariables');
-
     if (!$mainNavStartNode) {
         $mainNavStartNode = Document::getById(1);
     }
     ?>
-    <!-- NGL PRO Main Navigation -->
-    <nav class="navbar navbar-expand-md px-0 ngl-main-nav">
-        <div class="container px-3 d-md-flex">
-            <a class="navbar-brand mr-0" href="<?= $mainNavStartNode; ?>"><i class="ngl-icon fa-system-ngl"></i></a>
-            <button class="navbar-toggler ngl-nav-toggler collapsed" type="button" data-toggle="collapse" data-target="#ngl-nav-responsive" aria-controls="ngl-nav-responsive" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-times" aria-hidden="true"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="ngl-nav-responsive">
-                <?php
-                $mainNavigation = $this->navigation()->buildNavigation($document, $mainNavStartNode);
-                $mainNavigation->addPage([
-                    'order' => -1, // put it in front of all the others
-                    'uri' => '/#theNgl', //path to homepage
-                    'label' => 'Die Ngl', //visible label
-                    'title' => 'Die Ngl' //tooltip text
-                ]);
 
-                $mainNavigation->addPage([
-                    'order' => -1, // put it in front of all the others
-                    'uri' => 'https://www.ngl.one/campus-cup.html', //path to homepage
-                    'label' => 'Campuscup', //visible label
-                    'title' => 'Campuscup' //tooltip text
-                ]);
+    <div class="container">
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="<?= $mainNavStartNode; ?>">
+                        <img src="/static/img/logo-white.svg" alt="pimcore Demo">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <?php
+                    $mainNavigation = $this->navigation()->buildNavigation($document, $mainNavStartNode);
 
-                $mainNavigation->addPage([
-                    'order' => -1, // put it in front of all the others
-                    'uri' => 'https://www.ngl.one/proclub', //path to homepage
-                    'label' => 'Pro Club', //visible label
-                    'title' => 'Pro Club' //tooltip text
-                ]);
+                    echo $this->navigation()->render($mainNavigation, 'menu', 'renderMenu', [
+                        'maxDepth' => 1,
+                        'ulClass'  => 'nav navbar-nav'
+                    ]);
+                    ?>
 
-                $mainNavigation->addPage([
-                    'order' => -1, // put it in front of all the others
-                    'uri' => '/#news', //path to homepage
-                    'label' => 'News', //visible label
-                    'title' => 'News' //tooltip text
-                ]);
+                    <ul class="nav navbar-nav navbar-right">
+                        <?= $this->template('Includes/login.html.php'); ?>
+                        <?= $this->template('Includes/language.html.php'); ?>
+                    </ul>
 
-                /** @var \Pimcore\Navigation\Renderer\Menu $menuRenderer */
-                $menuRenderer = $this->navigation()->menu();
-
-                ?>
-                  <ul class="navbar-nav nav mt-sm-2 mt-md-0">
-
-                    <?php foreach ($mainNavigation as $page) { ?>
-                        <?php /* @var $page \Pimcore\Navigation\Page\Document */ ?>
-                        <?php // here need to manually check for ACL conditions ?>
-                        <?php if (!$page->isVisible() || !$menuRenderer->accept($page)) { continue; } ?>
-                        <?php $hasChildren = $page->hasPages(); ?>
-                        <?php $isActive = $page->isActive(); ?>
-                        <?php if (!$hasChildren) { ?>
-                            <li class="nav-item">
-                                <a  class="nav-link ngl-link-fourth <?php echo $isActive ? 'active' : ''; ?> "
-                                    href="<?=
-                                    $page->getHref
-                                () ?>">
-                                    <?= $this->translate($page->getLabel()) ?>
-                                </a>
-                            </li>
-                        <?php } ?>
-                    <?php } ?>
-                </ul>
-
-
-                <a class="navbar-brand mr-0 font-weight-bold ngl-link-primary" href="<?= $environmentObject->getRegisterUrl() ?>"><span>Anmelden</span></a>
-
+                </div>
             </div>
         </div>
-    </nav>
-    <!-- END NGL PRO Main Navigation -->
-
-</header>
-<?php if ($isPortal): ?>
-    <?= $this->template('NglHomeBundle:Includes:ngl-pro-carousel.html.php', ["environmentObject" => $environmentObject]) ?>
-    <div id="theNgl"></div>
-    <?php $this->slots()->output('_content'); ?>
-    <?= $this->template('NglHomeBundle:Includes:the-ngl-branding.html.php',["environmentObject" => $environmentObject]) ?>
-    <?= $this->template('NglHomeBundle:Includes:the-ngl-news.html.php') ?>
-<?php endif; ?>
-
-
+    </div>
+</div>
 
 <?php if (!$isPortal): ?>
-
+    <?= $this->template('Includes/jumbotron.html.php') ?>
 
     <div id="content" class="container">
         <?php
         $hideLeftNav     = $document->getProperty('leftNavHide') || $this->getViewParameter('hideLeftNav', false);
-        $showBreadcrumbs = $this->getViewParameter('showBreadcrumbs', false);
+        $showBreadcrumbs = $this->getViewParameter('showBreadcrumbs', true);
 
-        $mainColClass = '';
+        $mainColClass = 'col-md-9 col-md-push-3';
         if ($hideLeftNav) {
-            $mainColClass = '';
+            $mainColClass = 'col-md-12';
         }
         ?>
 
@@ -226,38 +155,117 @@ use Pimcore\Model\Document\Page;
             <?php endif; ?>
         </div>
 
-    </div>
-<?php endif; ?>
-<?php if ($isPortal): ?>
-    <?= $this->template('Includes/the-ngl-partner.html.php') ?>
+        <?php if (!$hideLeftNav): ?>
+            <div class="col-md-3 col-md-pull-9 sidebar">
+                <div class="bs-sidebar hidden-print affix-top" role="complementary">
+                    <?php
+                    $leftNavStartNode = $document->getProperty('leftNavStartNode');
+                    if (!$leftNavStartNode) {
+                        $leftNavStartNode = $mainNavStartNode;
+                    }
 
+                    $leftNav = $this->navigation()->buildNavigation($document, $leftNavStartNode);
+                    ?>
+
+                    <h3><?= $leftNavStartNode->getProperty('navigation_name'); ?></h3>
+                    <?= $this->navigation()->render($leftNav, 'menu', 'renderMenu', [
+                        'ulClass'                          => 'nav bs-sidenav',
+                        'expandSiblingNodesOfActiveBranch' => true
+                    ]) ?>
+                </div>
+                <?= $this->inc($document->getProperty('sidebar')); ?>
+            </div>
+        <?php endif; ?>
+    </div>
+<?php else: ?>
+    <?php $this->slots()->output('_content') ?>
 <?php endif; ?>
 
 <?php
 // include a document-snippet - in this case the footer document
 echo $this->inc('/' . $this->getLocale() . '/shared/includes/footer');
 
-$this->headScript()->appendFile('/bundles/nglhome/vendor/requirejs/require.js');
-$this->headScript()->appendFile('/bundles/nglhome/js/main.js');
+// global scripts, we use the view helper here to have the cache buster functionality
+$this->headScript()->prependFile('/static/bootstrap/js/bootstrap.js');
+$this->headScript()->prependFile('/static/js/jquery-1.11.0.min.js');
+$this->headScript()->appendFile('/static/lib/magnific/magnific.js');
+$this->headScript()->appendFile('/static/lib/video-js/video.js');
+$this->headScript()->appendFile('/static/js/srcset-polyfill.min.js');
+
 echo $this->headScript();
 ?>
 
-<?= $environmentObject->getEnablePiwik() ?>
-
-<?php if ($environmentObject->getEnablePiwik() == 1): ?>
-<script type="text/javascript">
-    var _paq = _paq || [];
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-        var u="//<?= $environmentObject->getPiwikHostName() ?>/";
-        _paq.push(['setTrackerUrl', u+'piwik.php']);
-        _paq.push(['setSiteId', '<?= $environmentObject->getPiwikSiteId() ?>']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'<?= $environmentObject->getPiwikJsFilepath()
-                ?>'; s.parentNode.insertBefore(g,s);
-    })();
+<script>
+    videojs.options.flash.swf = "/static/lib/video-js/video-js.swf";
 </script>
-<?php endif; ?>
+
+<script>
+    // main menu
+    $(".navbar-wrapper ul.nav>li>ul").each(function () {
+        var li = $(this).parent();
+        var a = $("a.main", li);
+
+        $(this).addClass("dropdown-menu");
+        li.addClass("dropdown");
+        a.addClass("dropdown-toggle");
+        li.on("mouseenter", function () {
+            $("ul", $(this)).show();
+        });
+        li.on("mouseleave", function () {
+            $("ul", $(this)).hide();
+        });
+    });
+
+    // side menu
+    $(".bs-sidenav ul").each(function () {
+        $(this).addClass("nav");
+    });
+
+    // gallery carousel: do not auto-start
+    $('.gallery').carousel('pause');
+
+    // tabbed slider text
+    var clickEvent = false;
+    $('.tabbed-slider').on('click', '.nav a', function () {
+        clickEvent = true;
+        $('.nav li').removeClass('active');
+        $(this).parent().addClass('active');
+    }).on('slid.bs.carousel', function (e) {
+        if (!clickEvent) {
+            var count = $('.nav').children().length - 1;
+            var current = $('.nav li.active');
+            current.removeClass('active').next().addClass('active');
+            var id = parseInt(current.data('slide-to'));
+            if (count == id) {
+                $('.nav li').first().addClass('active');
+            }
+        }
+        clickEvent = false;
+    });
+
+    $("#portalHeader img, #portalHeader .item, #portalHeader").height($(window).height());
+
+    <?php if(!$this->editmode): ?>
+
+    // center the caption on the portal page
+    $("#portalHeader .carousel-caption").css("bottom", Math.round(($(window).height() - $("#portalHeader .carousel-caption").height()) / 3) + "px");
+
+    $(document).ready(function () {
+
+        // lightbox (magnific)
+        $('a.thumbnail').magnificPopup({
+            type: 'image',
+            gallery: {
+                enabled: true
+            }
+        });
+
+        $(".image-hotspot").tooltip();
+        $(".image-marker").tooltip();
+    });
+
+    <?php endif; ?>
+</script>
+
 </body>
 </html>

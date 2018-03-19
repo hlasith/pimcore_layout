@@ -12,51 +12,39 @@ $this->extend('layout.html.php');
 <?= $this->template('Includes/content-headline.html.php'); ?>
 <?= $this->areablock('content'); ?>
 
-<div class="row">
-            <?php
-            /** @var \Pimcore\Model\DataObject\News   $news */
-            $newsCount = 0;
-            foreach ($this->news as $news) { 
-            
-                    $detailLink = $this->path('news', [
-                        'id'     => $news->getId(),
-                        'text'   => $news->getTitle(),
-                        'prefix' => $this->document->getFullPath(),
-                    ]);
+<?php
+/** @var \Pimcore\Model\DataObject\News $news */
+foreach ($this->news as $news) { ?>
+    <div class="media">
 
-                    ?>
+        <?php
+        $detailLink = $this->path('news', [
+            'id'     => $news->getId(),
+            'text'   => $news->getTitle(),
+            'prefix' => $this->document->getFullPath(),
+        ]);
+        ?>
 
-                   <?php if($newsCount == 0): ?>
-                        <div class="col-12 mt-3">
-                    <?php else: ?>
-                        <div class="col-12 col-md-6 mt-3 pull-left">
-                    <?php endif; ?>
+        <?php if($news->getImage_1()) { ?>
+            <a class="pull-left" href="<?= $detailLink; ?>">
+                <?= $news->getImage_1()->getThumbnail("newsList")->getHTML(["class" => "media-object"]); ?>
+            </a>
+        <?php } ?>
 
-                        <a href="<?= $detailLink; ?>">
-                            <div class="thumbnail">
-                                <?= $news->getImage_1()->getThumbnail(["width" => 1130, "format" => "jpeg"])->getHTML(["class" => "media-object"]); ?>
+        <div class="media-body">
+            <h4 class="media-heading">
+                <a href="<?= $detailLink; ?>"><?= $news->getTitle(); ?></a>
+                <br />
+                <small><i class="glyphicon glyphicon-calendar"></i> <?= $news->getDate()->format("d/m/Y"); ?></small>
+            </h4>
+            <?= $news->getShortText(); ?>
+        </div>
+    </div>
+<?php } ?>
 
-
-                                <div class="caption">
-                                    <span class="captionSubHeader"><?= $news->getShortText(); ?></span>
-                                    <h3><?= $news->getTitle(); ?></h3>
-                                </div>
-                            </div>
-                        </a>
-
-                  </div>
-
-            <?php
-            $newsCount++;
-            } ?>
-</div>
-
-
-
-
-    <!-- pagination start -->
-    <?= $this->render(
-        "Includes/paging.html.php",
-        get_object_vars($this->news->getPages("Sliding"))
-    ); ?>
-    <!-- pagination end -->
+<!-- pagination start -->
+<?= $this->render(
+    "Includes/paging.html.php",
+    get_object_vars($this->news->getPages("Sliding"))
+); ?>
+<!-- pagination end -->

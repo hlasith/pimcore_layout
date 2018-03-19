@@ -11,9 +11,8 @@ $this->extend('layout.html.php');
 
 <?php
 // set page meta-data
-$this->headTitle()->set($this->news->getPageTitle());
+$this->headTitle()->set($this->news->getTitle());
 $this->headMeta()->setDescription($this->news->getShortText(), 160);
-
 
 /** @var \Pimcore\Model\DataObject\News $news */
 $news = $this->news;
@@ -21,18 +20,18 @@ $news = $this->news;
 
 <section class="area-wysiwyg">
 
-    <div class="row ngl-edit-nav py-3 mt-5">
-        <div class="col-12">
-            <h3 class="mb-0 mt-4 mb-3"><?= $news->getPageTitle(); ?></h3>
-        </div>
+    <div class="page-header">
+        <h1><?= $news->getTitle(); ?></h1>
     </div>
-    <h5 class="mb-4"><?= $news->getShortText(); ?></h5>
 
+    <div class="lead">
+        <p><?= $news->getShortText(); ?></p>
+    </div>
 
-
+    <?= $news->getText(); ?>
 
     <div class="row">
-        <?php for ($i = 1; $i <= 1; $i++) { ?>
+        <?php for ($i = 1; $i <= 3; $i++) { ?>
 
             <?php
             /** @var \Pimcore\Model\Document\Tag\Image $image */
@@ -40,26 +39,14 @@ $news = $this->news;
             ?>
 
             <?php if ($image) { ?>
-
-                <div class="col-12">
-                    <div class="img-thumbnail">
-                        <?= $image->getThumbnail(["width" => 1130, "format" => "jpeg"])->getHTML(); ?>
-                    </div>
+                <div class="col-lg-3">
+                    <a href="<?= $image->getThumbnail("galleryLightbox"); ?>" class="thumbnail">
+                        <?= $image->getThumbnail("galleryThumbnail")->getHTML(); ?>
+                    </a>
                 </div>
             <?php } ?>
 
         <?php } ?>
     </div>
-    <?php $this->glossary()->start(); ?>
-        <?= $news->getText(); ?>
-    <?php $this->glossary()->stop() ?>
-
-    <a class="ngl-btn-primary font-weight-bold rounded text-uppercase mt-3 mb-3" href="/">ZUR NGL HOME</a>
-    <?php $cache = $this->cache("test_cache_key", 60); ?>
-    <?php if (!$cache->start()): ?>
-        <h1>This is some cached microtime</h1>
-        <?= microtime() ?>
-        <?php $cache->end(); ?>
-    <?php endif ?>
 
 </section>

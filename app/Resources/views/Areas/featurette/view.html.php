@@ -5,10 +5,10 @@
  * @var \Pimcore\Templating\GlobalVariables $app
  */
 ?>
-<section class="area-featurette area-featurette ngl-section-dark pt-5">
+
+<section class="area-featurette">
     <?php while($this->block("block")->loop()) { ?>
-    <div class="container p-3">
-        <div class="row">
+        <div class="row featurette">
 
             <?php
                 $position = $this->select("position")->getData();
@@ -16,7 +16,18 @@
                     $position = "right";
                 }
             ?>
-            <div class="col-12 <?= ($position == "right") ? "col-sm-6 push-sm-6" : "col-sm-6"; ?>">
+
+            <div class="col-sm-7 col-sm-<?= ($position == "right") ? "push" : ""; ?>-5">
+                <h2 class="featurette-heading">
+                    <?= $this->input("headline"); ?>
+                    <span class="text-muted"><?= $this->input("subline"); ?></span>
+                </h2>
+                <div class="lead">
+                    <?= $this->wysiwyg("content", ["height" => 200]); ?>
+                </div>
+            </div>
+
+            <div class="col-sm-5 col-sm-<?= ($position == "right") ? "pull" : ""; ?>-7">
                 <?php if($this->editmode) { ?>
                     <div class="editmode-label">
                         <label>Orientation:</label>
@@ -29,43 +40,29 @@
                 <?php } ?>
 
                 <?php
-                $type = $this->select("type")->getData();
-                if($type == "video") {
-                    echo $this->video("video", [
-                        "thumbnail" => "featurerette",
-                        "attributes" => [
-                            "class" => "video-js vjs-default-skin vjs-big-play-centered",
-                            "data-setup" => "{}"
-                        ],
-                    ]);
-                } else {
-                   
-                    $imgConfig = [
-                        "class" => "d-block w-100",
-                        "thumbnail" => "featurerette"
-                    ];
+                    $type = $this->select("type")->getData();
+                    if($type == "video") {
+                        echo $this->video("video", [
+                            "thumbnail" => "featurerette",
+                            "attributes" => [
+                                "class" => "video-js vjs-default-skin vjs-big-play-centered",
+                                "data-setup" => "{}"
+                            ],
+                        ]);
+                    } else {
+                        $imgConfig = [
+                            "class" => "featurette-image img-responsive",
+                            "thumbnail" => "featurerette"
+                        ];
 
-                    echo $this->image("image", $imgConfig);
-                }
+                        echo $this->image("image", $imgConfig);
+                    }
                 ?>
             </div>
-            <div class="col-12  <?= ($position == "right") ? "col-sm-6 pull-sm-6" : "col-sm-6"; ?>">
-                <h5 class="border-top ngl-border-secondary  py-3">
-                    <?= $this->input("headline"); ?>
-                    <span class="text-muted"><?= $this->input("subline"); ?></span>
-                </h5>
-                <div>
-                    <?= $this->wysiwyg("content", ["height" => 200]); ?>
-                </div>
-            </div>
-
         </div>
-    </div>
 
         <?php if($this->block("block")->getCurrent() < $this->block("block")->getCount()-1) { ?>
             <hr class="featurette-divider">
         <?php } ?>
     <?php } ?>
 </section>
-
-

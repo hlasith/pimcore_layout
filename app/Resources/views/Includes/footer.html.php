@@ -6,47 +6,16 @@
  */
 ?>
 
-<?php
-$footerNavStartNode = $document->getProperty('footerNavStartNode');
-//if (!$footerNavStartNode) {
-//    $footerNavStartNode = Document::getById(75);
-//}
+<?php if($this->editmode) { // styles only for editmode ?>
+    <link rel="stylesheet" href="/static/css/global.css">
+<?php } ?>
 
-$footerNavigation = $this->navigation()->buildNavigation($document, $footerNavStartNode);
-
-/** @var \Pimcore\Navigation\Renderer\Menu $menuRenderer */
-$menuRenderer = $this->navigation()->menu();
-
-?>
+<!-- FOOTER -->
 <footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 d-flex justify-content-center">
-                <ul class="d-flex justify-content-between align-items-center">
-
-                    <?php foreach ($footerNavigation as $page) { ?>
-                        <?php /* @var $page \Pimcore\Navigation\Page\Document */ ?>
-                        <?php // here need to manually check for ACL conditions ?>
-                        <?php if (!$page->isVisible() || !$menuRenderer->accept($page)) {
-                            continue;
-                        } ?>
-                        <?php $hasChildren = $page->hasPages(); ?>
-                        <?php $isActive = $page->isActive(); ?>
-                        <?php if (!$hasChildren) { ?>
-                            <li>
-                                <a class="text-uppercase font-weight-bold ngl-font-black <?php echo $isActive ? 'active' : ''; ?> "
-                                   href="<?=
-                                   $page->getHref
-                                   () ?>">
-                                    <?= $this->translate($page->getLabel()) ?>
-                                </a>
-                            </li>
-                        <?php } ?>
-                    <?php } ?>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <p class="pull-right"><a href="#"><?= $this->translate("Back to top"); ?></a></p>
+    <p class="links">&copy; <?= date("Y"); ?> pimcore GmbH &middot;
+        <?php while($this->block("links")->loop()) { ?>
+            <?= $this->link("link"); ?>
+        <?php } ?>
+    </p>
 </footer>
-
-
