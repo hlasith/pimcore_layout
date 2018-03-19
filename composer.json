@@ -77,7 +77,6 @@
     "myclabs/php-enum": "^1.5",
     "neitanod/forceutf8": "~2",
     "nesbot/carbon": "~1",
-    "ngl/borussia-bundle": "9999999-dev",
     "ngl/home-bundle": "9999999-dev",
     "ocramius/package-versions": "^1.1",
     "ocramius/proxy-manager": "2.0.*",
@@ -178,15 +177,7 @@
       "merge-scripts": false
     }
   },
-  "repositories": {
-    "ngl/borussia-bundle": {
-      "type": "path",
-      "url": "../ngl-borussia-bundle",
-      "options": {
-        "symlink": true
-      }
-    },
-    "ngl/home-bundle": {
+  "ngl/home-bundle": {
       "type": "path",
       "url": "../ngl-home-bundle",
       "options": {
